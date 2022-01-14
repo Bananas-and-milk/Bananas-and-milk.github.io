@@ -1,178 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>MySql简单窗口函数运用</title>
-      <link href="/2022/01/10/MySql%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8/"/>
-      <url>/2022/01/10/MySql%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简单的窗口函数运用"><a href="#简单的窗口函数运用" class="headerlink" title="简单的窗口函数运用"></a>简单的窗口函数运用</h2><p>排名窗口函数分三种: rank() over()        序列：  1  1  3  4  5 5 7….<br>           dense_rank() over()  序列:   1  1  2  3  4 4 5….<br>           row_number() over()  序列：  1  2  3  4  5 6 7….<br>偏移分析函数语法<br>            lag(字段名，偏移量,[默认值]) over()  向前偏移<br>            lead(字段名，偏移量,[默认值]) over() 相反</p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Tableau作品1</title>
-      <link href="/2022/01/10/Tableau%E4%B8%8A%E6%89%8B%E5%88%B6%E4%BD%9C/"/>
-      <url>/2022/01/10/Tableau%E4%B8%8A%E6%89%8B%E5%88%B6%E4%BD%9C/</url>
-      
-        <content type="html"><![CDATA[<h2 id="数据灵感来源"><a href="#数据灵感来源" class="headerlink" title="数据灵感来源"></a>数据灵感来源</h2><p>大数据时代，人们对数据的认识高度以及了解深度已经到达了一定重视，众多公司对数据人才的需求越是愈发激烈。<br>本次调研就来看看是否存在真实性</p><h2 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h2><p>某网站上分享的有关数据产业招聘岗位汇总。</p><h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><p><img src="/imgg/Tableau%E4%BD%9C%E5%93%811.png" alt="Tableau"><br><img src="/imgg/Tableau%E4%BD%9C%E5%93%812.png" alt="Tableau"></p><h2 id="数据分析-个人观点"><a href="#数据分析-个人观点" class="headerlink" title="数据分析(个人观点)"></a>数据分析(个人观点)</h2><p>专门针对数据产业上人数最多的      北京        地区进行分析<br><img src="/imgg/Tableau%E4%BD%9C%E5%93%811%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%A7%82%E7%82%B9.png" alt="Xmind"></p><hr><h1 id="调研总结"><a href="#调研总结" class="headerlink" title="调研总结"></a>调研总结</h1><p>1、数据产业确实掀起了一大波风潮，很多公司都对数据岗位的需求也确实激烈（激烈在于数据岗位的种类，薪资等方面），特别是北京地区。<br>2、数据产业都需要一些经验丰厚的职场人才能完全胜任，年轻人可不容易。</p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Tableau练习demo</title>
-      <link href="/2022/01/08/Tableau%E7%BB%83%E4%B9%A0%E6%A8%A1%E6%9D%BF/"/>
-      <url>/2022/01/08/Tableau%E7%BB%83%E4%B9%A0%E6%A8%A1%E6%9D%BF/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Tableau安装"><a href="#Tableau安装" class="headerlink" title="Tableau安装"></a>Tableau安装</h2><p>官网下载64位，学生认证注册激活(还好及时注册，不然毕业就没免费试用了^ _ ^)。</p><h2 id="数据连接"><a href="#数据连接" class="headerlink" title="数据连接"></a>数据连接</h2><p>Excel的CSV文件直接用文本文件进行打开和连接。</p><h2 id="数据可视化原理"><a href="#数据可视化原理" class="headerlink" title="数据可视化原理"></a>数据可视化原理</h2><p>维度、度量</p><h2 id="基础图表制作"><a href="#基础图表制作" class="headerlink" title="基础图表制作"></a>基础图表制作</h2><p>百分之90多的数据可视化都可以用折线图、柱状图、散点图、饼图（被誉为四大金刚）</p><h2 id="BI仪表盘搭建"><a href="#BI仪表盘搭建" class="headerlink" title="BI仪表盘搭建"></a>BI仪表盘搭建</h2><p>(直接上图！！)<br><img src="/imgg/demo1.png" alt="Tableau"><br><img src="/imgg/demo2.png" alt="Tableau"></p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Excel报表制作</title>
-      <link href="/2022/01/06/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%BC%94%E7%A4%BA/Excel%E6%8A%A5%E5%91%8A%E5%88%B6%E4%BD%9C/"/>
-      <url>/2022/01/06/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%BC%94%E7%A4%BA/Excel%E6%8A%A5%E5%91%8A%E5%88%B6%E4%BD%9C/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Excel周报制作"><a href="#Excel周报制作" class="headerlink" title="Excel周报制作"></a>Excel周报制作</h2><p>步骤：<br>1、先设置重要的指标标签（结果指标和过程指标）,并且额外用数据有效性对平台进行可选择性划分，设置业务进度和目标。<br>2、时间轴作为起始字段，把数据中重要的字段提取出来。利用if函数判断平台，再sumifs函数嵌套index和match进行操作（重点）。<br>3、数据可视化（迷你曲线图、数据区域添加规则低于平均值标下划线并加粗、周环比低于0位红色向下箭头、高于0位绿色向上箭头）<br>字体颜色，位置、行的填充色等。<br><img src="/imgg/Excel%E5%91%A8%E6%8A%A5.png" alt="Excel"></p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Excel应用</title>
-      <link href="/2022/01/05/Excel%E5%BA%94%E7%94%A8/"/>
-      <url>/2022/01/05/Excel%E5%BA%94%E7%94%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="sum、sumif、sumifs函数的使用"><a href="#sum、sumif、sumifs函数的使用" class="headerlink" title="sum、sumif、sumifs函数的使用"></a>sum、sumif、sumifs函数的使用</h2><p><img src="/imgg/Excelsumifs%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8.png" alt="ExcelPicture"></p><h2 id="注意！！"><a href="#注意！！" class="headerlink" title="注意！！"></a>注意！！</h2><p>用函数计算准确日期用date（year（），month（），day（））来进行简单的日期加减。<br>但是遇到特殊值，比如每个月份的最后一天带有不确定的用 eomonth()函数来计算月份的<br>最后一天。</p><hr><h2 id="vlookup函数"><a href="#vlookup函数" class="headerlink" title="vlookup函数"></a>vlookup函数</h2><p>1、简单的索引函数。vlookup(查找值，区域，列，查询模糊/查询准确)</p><hr><h2 id="最强索引-index-与-match-函数的结合！"><a href="#最强索引-index-与-match-函数的结合！" class="headerlink" title="最强索引 index 与 match 函数的结合！"></a>最强索引 index 与 match 函数的结合！</h2><p>1、为了快准狠的解决表的字段补充而使用。<br>match 函数能准确的查找数据的行列值<br>index 函数能准确的查找行列值的具体数据<br>例1:<br><img src="/imgg/index%E5%92%8Cmatch%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8.png" alt="ExcelPicture"><br>2、加上sumifs嵌套使用<br>例2：<br><img src="/imgg/sumifs%E5%92%8Cindex%E5%92%8Cmatch%E4%BD%BF%E7%94%A8.png" alt="ExcelPicture"></p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>数据分析理解</title>
-      <link href="/2022/01/03/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%96%B0%E8%AE%A4%E8%AF%86/"/>
-      <url>/2022/01/03/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%96%B0%E8%AE%A4%E8%AF%86/</url>
-      
-        <content type="html"><![CDATA[<h2 id="我的数据分析理解"><a href="#我的数据分析理解" class="headerlink" title="我的数据分析理解"></a>我的数据分析理解</h2><p><img src="/imgg/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%906%E4%B8%AA%E5%AD%97%E6%80%BB%E7%BB%93.png" alt="Xmind"></p><hr><h2 id="分析数据的目的是："><a href="#分析数据的目的是：" class="headerlink" title="分析数据的目的是："></a>分析数据的目的是：</h2><p>一、及时发现异常。<br>二、找到数据之间的因果关系。</p><hr><h2 id="分析数据用到的A-B实验验证方法报告模板"><a href="#分析数据用到的A-B实验验证方法报告模板" class="headerlink" title="分析数据用到的A/B实验验证方法报告模板"></a>分析数据用到的A/B实验验证方法报告模板</h2><p><img src="/imgg/AB%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF.png" alt="picture"></p><hr><h2 id="数据分析的常见问题"><a href="#数据分析的常见问题" class="headerlink" title="数据分析的常见问题"></a>数据分析的常见问题</h2><p>1、为什么要分析数据？<br>2、数据分析如何实现？<br>3、如何进A/B测试？<br>4、有哪些分析框架和方法？<br>5、如何基于数据创造价值？<br>6、如何基于数据训练算法？</p><h2 id="个人回答-（一）为什么要分析数据？"><a href="#个人回答-（一）为什么要分析数据？" class="headerlink" title="个人回答:（一）为什么要分析数据？"></a>个人回答:（一）为什么要分析数据？</h2><p>1.我认为分析数据是这个社会逐渐从非必要转变成必要的一项技能。诸多的行业都是有着千万量级的数据，<br>  行业所关心的利润就是从数据中可得出，我们只要遵循mece法则将数据进行筛选，量化，逻辑拼接，就可<br>  以得到商业核心价值所在。企业发展趋势，走向都可以由数据探索挖掘中得知。<br>2.分析数据也可以为企业把脉，快，狠，准的查找出异常值，找到数据之间的因果关系。<br>3.在平稳情况下的净资产利润率上逐步提高，为企业做出贡献。</p><h2 id="（二）数据分析如何实现？"><a href="#（二）数据分析如何实现？" class="headerlink" title="（二）数据分析如何实现？"></a>（二）数据分析如何实现？</h2><p>1.首先是观测（对事物形成客观的认识）其次再实验（发现规律，验证假设）最后应用（不断基于数据反馈迭代产品）</p><h2 id="（三）如何进A-B测试？"><a href="#（三）如何进A-B测试？" class="headerlink" title="（三）如何进A/B测试？"></a>（三）如何进A/B测试？</h2><p>1.实验目标-&gt;实验假设-&gt;实验打分-&gt;实验指标-&gt;实验受众-&gt;实验版本-&gt;开发验收-&gt;实验结果-&gt;实验分析-&gt;后续计划</p><h2 id="四-有哪些分析框架和方法？"><a href="#四-有哪些分析框架和方法？" class="headerlink" title="(四) 有哪些分析框架和方法？"></a>(四) 有哪些分析框架和方法？</h2><p>1（方法） 流程拆解法、杜邦分析法、象限拆解法、二分法<br>2（框架） AARRR模型、5W1H模型、RFM象限模型、SWOT态势分析模型、PEST国家政治制度分析模型、漏斗模型</p><h2 id="（五）如何基于数据创造价值？"><a href="#（五）如何基于数据创造价值？" class="headerlink" title="（五）如何基于数据创造价值？"></a>（五）如何基于数据创造价值？</h2><p>1.异常点解决=利润价值<br>2.数据趋势=未来评估价值<br>3.数据高峰阶段=决策时机价值<br>4.数据合理，有效=商业价值</p><h2 id="（六）如何基于数据训练算法？"><a href="#（六）如何基于数据训练算法？" class="headerlink" title="（六）如何基于数据训练算法？"></a>（六）如何基于数据训练算法？</h2><p>1.为算法设定明确的业务目标-&gt;为算法提供高质量的数据-&gt;判断算法是否真的创造了实际价值-&gt;帮助业务更好的使用算法</p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Kubernetes架构</title>
-      <link href="/2022/01/03/kubernetes%E6%9E%B6%E6%9E%84/"/>
-      <url>/2022/01/03/kubernetes%E6%9E%B6%E6%9E%84/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Kubernetes架构"><a href="#Kubernetes架构" class="headerlink" title="Kubernetes架构"></a>Kubernetes架构</h2><p>Kubernetes的核心特点就是那个Pod概念，<br>我们将Pod比喻成一个瓶子的瓶塞<br>将里面的容器container比喻成一种种成分<br>一个node中可以有多个Pod，Pod之间能实现交互。<br>Pod就像API一样，实现服务入口交接功能。</p><p><img src="/imgg/Kubernetes%E6%9E%B6%E6%9E%84.png" alt="Xmind"></p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>聊聊我们的贝叶斯定理</title>
-      <link href="/2021/12/18/%E8%81%8A%E8%81%8A%E6%88%91%E4%BB%AC%E7%9A%84%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86/"/>
-      <url>/2021/12/18/%E8%81%8A%E8%81%8A%E6%88%91%E4%BB%AC%E7%9A%84%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86/</url>
-      
-        <content type="html"><![CDATA[<h2 id="可爱的贝叶斯定理"><a href="#可爱的贝叶斯定理" class="headerlink" title="可爱的贝叶斯定理"></a>可爱的贝叶斯定理</h2><p>我们知道伯努利事件，它都是每个独立的事件组成。<br>贝叶斯定理则是在伯努利事件的基础上进行对某些事件的概率确定。</p><p>简单的如图所示，只能用最蠢的方式去做这种题。^ - ^<br><img src="/imgg/%E6%A6%82%E7%8E%87%E9%A2%98%E7%9B%AE.png" alt="题目"><br><img src="/imgg/%E9%A2%98%E7%9B%AE%E7%AD%94%E6%A1%88.jpg" alt="题目答案"></p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>切比雪夫定理的概述</title>
-      <link href="/2021/12/18/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%BC%94%E7%A4%BA/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E5%AE%9A%E7%90%86/"/>
-      <url>/2021/12/18/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%BC%94%E7%A4%BA/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E5%AE%9A%E7%90%86/</url>
-      
-        <content type="html"><![CDATA[<hr><h2 id="切比雪夫定理"><a href="#切比雪夫定理" class="headerlink" title="切比雪夫定理"></a>切比雪夫定理</h2><p>有75%的数据在3个标准差的范围内;<br>有89%的数据在5个标准差的范围内;<br>有98%的数据在7个标准差的范围内;</p><h2 id="切比雪夫定理升级版（箱线图）和（正态分布图）"><a href="#切比雪夫定理升级版（箱线图）和（正态分布图）" class="headerlink" title="切比雪夫定理升级版（箱线图）和（正态分布图）"></a>切比雪夫定理升级版（箱线图）和（正态分布图）</h2><p>正态分布中，有68%的数据在1个标准差的范围内;<br>正态分布中，有95%的数据在2个标准差的范围内;<br>正态分布中，有99.8%的数据在3个标准差的范围内;</p><p><img src="/imgg/deng.jpg" alt="星星点灯"><br>–来自李鸿的蜡烛灯</p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>MySql简单窗口函数运用</title>
+    <url>/2022/01/10/MySql%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="简单的窗口函数运用"><a href="#简单的窗口函数运用" class="headerlink" title="简单的窗口函数运用"></a>简单的窗口函数运用</h2><p>排名窗口函数分三种: rank() over()        序列：  1  1  3  4  5 5 7….<br>           dense_rank() over()  序列:   1  1  2  3  4 4 5….<br>           row_number() over()  序列：  1  2  3  4  5 6 7….<br>偏移分析函数语法<br>            lag(字段名，偏移量,[默认值]) over()  向前偏移<br>            lead(字段名，偏移量,[默认值]) over() 相反</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Excel应用</title>
+    <url>/2022/01/05/Excel%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="sum、sumif、sumifs函数的使用"><a href="#sum、sumif、sumifs函数的使用" class="headerlink" title="sum、sumif、sumifs函数的使用"></a>sum、sumif、sumifs函数的使用</h2><p><img src="/imgg/Excelsumifs%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8.png" alt="ExcelPicture"></p>
+<h2 id="注意！！"><a href="#注意！！" class="headerlink" title="注意！！"></a>注意！！</h2><p>用函数计算准确日期用date（year（），month（），day（））来进行简单的日期加减。<br>但是遇到特殊值，比如每个月份的最后一天带有不确定的用 eomonth()函数来计算月份的<br>最后一天。</p>
+<hr>
+<h2 id="vlookup函数"><a href="#vlookup函数" class="headerlink" title="vlookup函数"></a>vlookup函数</h2><p>1、简单的索引函数。vlookup(查找值，区域，列，查询模糊/查询准确)</p>
+<hr>
+<h2 id="最强索引-index-与-match-函数的结合！"><a href="#最强索引-index-与-match-函数的结合！" class="headerlink" title="最强索引 index 与 match 函数的结合！"></a>最强索引 index 与 match 函数的结合！</h2><p>1、为了快准狠的解决表的字段补充而使用。<br>match 函数能准确的查找数据的行列值<br>index 函数能准确的查找行列值的具体数据<br>例1:<br><img src="/imgg/index%E5%92%8Cmatch%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8.png" alt="ExcelPicture"><br>2、加上sumifs嵌套使用<br>例2：<br><img src="/imgg/sumifs%E5%92%8Cindex%E5%92%8Cmatch%E4%BD%BF%E7%94%A8.png" alt="ExcelPicture"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tableau作品1</title>
+    <url>/2022/01/10/Tableau%E4%B8%8A%E6%89%8B%E5%88%B6%E4%BD%9C/</url>
+    <content><![CDATA[<h2 id="数据灵感来源"><a href="#数据灵感来源" class="headerlink" title="数据灵感来源"></a>数据灵感来源</h2><p>大数据时代，人们对数据的认识高度以及了解深度已经到达了一定重视，众多公司对数据人才的需求越是愈发激烈。<br>本次调研就来看看是否存在真实性</p>
+<h2 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h2><p>某网站上分享的有关数据产业招聘岗位汇总。</p>
+<h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><p><img src="/imgg/Tableau%E4%BD%9C%E5%93%811.png" alt="Tableau"><br><img src="/imgg/Tableau%E4%BD%9C%E5%93%812.png" alt="Tableau"></p>
+<h2 id="数据分析-个人观点"><a href="#数据分析-个人观点" class="headerlink" title="数据分析(个人观点)"></a>数据分析(个人观点)</h2><p>专门针对数据产业上人数最多的      北京        地区进行分析<br><img src="/imgg/Tableau%E4%BD%9C%E5%93%811%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%A7%82%E7%82%B9.png" alt="Xmind"></p>
+<hr>
+<h1 id="调研总结"><a href="#调研总结" class="headerlink" title="调研总结"></a>调研总结</h1><p>1、数据产业确实掀起了一大波风潮，很多公司都对数据岗位的需求也确实激烈（激烈在于数据岗位的种类，薪资等方面），特别是北京地区。<br>2、数据产业都需要一些经验丰厚的职场人才能完全胜任，年轻人可不容易。</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL牛客网第十二题详细解答（错题笔记）</title>
+    <url>/2022/01/13/Mysql%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E8%A7%A3%E9%A2%98%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="MySQL牛客网第十二题详细解答"><a href="#MySQL牛客网第十二题详细解答" class="headerlink" title="MySQL牛客网第十二题详细解答"></a>MySQL牛客网第十二题详细解答</h1><p>本题需求的是查找每个部门薪水最高的员工<br>看似非常简单，实则确实简单<br>一错：有个坑是 group by聚合部门名后dept_no占了主列，那么员工名emp_no字段就不能出现在第一列上。但题目要求先查看员工名emp_no，所以想一步登天还需绕路。<br>二错：将聚合好的dept_no列和最高工资各放在where dept_no 和 salary 处<br>那么聚合好的dept_no能够完美的确定下来，但是salary不能，因为你的最高工资在不同部门上可能存在相同工资<br>比如：部门001的员工工资分别为10 和 10 部门002的员工工资也分别为 10 和 10<br>那么筛选最高工资的时候，虽然用聚合了dept_no ，但还是无法分别这些10都来自于谁，所以在最后出现了异值。</p>
+<p>解决方式：一错就在原基础上绕路，分别对dept_no和salary进行判定即可绕路<br>         二错使用where和并形式来聚合。我现在才知道where可以带两字段进行判断的。涨知识了。<br>问题：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98.png" alt="mysql"><br>解答：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98%E7%AD%94%E6%A1%88.png" alt="mysql"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tableau练习demo</title>
+    <url>/2022/01/08/Tableau%E7%BB%83%E4%B9%A0%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h2 id="Tableau安装"><a href="#Tableau安装" class="headerlink" title="Tableau安装"></a>Tableau安装</h2><p>官网下载64位，学生认证注册激活(还好及时注册，不然毕业就没免费试用了^ _ ^)。</p>
+<h2 id="数据连接"><a href="#数据连接" class="headerlink" title="数据连接"></a>数据连接</h2><p>Excel的CSV文件直接用文本文件进行打开和连接。</p>
+<h2 id="数据可视化原理"><a href="#数据可视化原理" class="headerlink" title="数据可视化原理"></a>数据可视化原理</h2><p>维度、度量</p>
+<h2 id="基础图表制作"><a href="#基础图表制作" class="headerlink" title="基础图表制作"></a>基础图表制作</h2><p>百分之90多的数据可视化都可以用折线图、柱状图、散点图、饼图（被誉为四大金刚）</p>
+<h2 id="BI仪表盘搭建"><a href="#BI仪表盘搭建" class="headerlink" title="BI仪表盘搭建"></a>BI仪表盘搭建</h2><p>(直接上图！！)<br><img src="/imgg/demo1.png" alt="Tableau"><br><img src="/imgg/demo2.png" alt="Tableau"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Kubernetes架构</title>
+    <url>/2022/01/03/kubernetes%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="Kubernetes架构"><a href="#Kubernetes架构" class="headerlink" title="Kubernetes架构"></a>Kubernetes架构</h2><p>Kubernetes的核心特点就是那个Pod概念，<br>我们将Pod比喻成一个瓶子的瓶塞<br>将里面的容器container比喻成一种种成分<br>一个node中可以有多个Pod，Pod之间能实现交互。<br>Pod就像API一样，实现服务入口交接功能。</p>
+<p><img src="/imgg/Kubernetes%E6%9E%B6%E6%9E%84.png" alt="Xmind"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python(jupter Notebook)基础学习</title>
+    <url>/2022/01/13/jupyter%20Notebook/</url>
+    <content><![CDATA[<h2 id="Python-jupter-Notebook-基础学习"><a href="#Python-jupter-Notebook-基础学习" class="headerlink" title="Python(jupter Notebook)基础学习"></a>Python(jupter Notebook)基础学习</h2><h3 id="学了啥"><a href="#学了啥" class="headerlink" title="学了啥"></a>学了啥</h3><p>编程的数据类型,相互转换。</p>
+<p>%为通配符 ‘什么什么%s’%啥</p>
+<p>if 语句 if 条件 :  elif 条件:   else :   </p>
+<p>input为输入,   {}{} 搭配.format(?,?) </p>
+<p>for 循环 for i  in  数组:  意思:依次输出数组里面的元素，走完循环</p>
+<p>while 循环  while (条件) 符合条件则继续走下面，否则跳出循环</p>
+<p>def 函数名(参数)  return 带返回值</p>
+<p>匿名函数lambda</p>
+<p>去括号:字符串.strip()</p>
+<p>替代:  字符串.replace(‘?’,’?’)<br>数组切片:L1=[?:?]</p>
+<p>元组：理解为不可增伤改的列表即可  k1=(?,?,?)</p>
+<p>集合：k1={?,?,?,?}   集合可以进行交集&amp;,并集| 差集- 对称差集 ^</p>
+<p>两种键值对生成方式<br>EVA1 = {‘小智’:’小火龙’,’小茂’:’杰尼龟’,’小霞’:’波克比’}<br>EVA2 = dict(zip([‘小智’,’小茂’,’小霞’],[‘小火龙’,’杰尼龟’,[‘波克比’,’拉普拉斯’]]))       用keyes()和values()进行查看</p>
+<p>import numpy as np人称多维小魔方，数组形式如([])  eg: np.array([1,2,3])<br>查类型.dtype转类型用.astype(‘?’)  重组.reshape(3,4)将数组重整为3行4列<br>.sum(axis=0)自上而下相加，.sum(axis=1)自左到右相加<br>数组任意排序L1[[2,3,0]]  L2[[2,3,0]][[0,2,1]] 螳螂捕蝉黄雀在后</p>
+<p>L1.sort()升序排序.</p>
+<p>三元表达式where<br>练习：<br>小练习《打标签》<br>现在你有一列数据，内容是接下来周1到周5的室外气温<br>你想要新增一列数据，根据气温，决定中午去吃饭是走室外还是走地下室<br>若室温&gt;28℃，则走地下室;若室温&lt;=28℃，则走室外</p>
+<p>先对周几进行数组创建并排序。tempre = np.array([28,31,30,25,26])<br>                        choice=np.where(tempre&gt;28,’走地下室’,’走室外’)<br>                        print(tempre)<br>                        print(choice)<br>                        输出相对应的行为</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析理解</title>
+    <url>/2022/01/03/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%96%B0%E8%AE%A4%E8%AF%86/</url>
+    <content><![CDATA[<h2 id="我的数据分析理解"><a href="#我的数据分析理解" class="headerlink" title="我的数据分析理解"></a>我的数据分析理解</h2><p><img src="/imgg/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%906%E4%B8%AA%E5%AD%97%E6%80%BB%E7%BB%93.png" alt="Xmind"></p>
+<hr>
+<h2 id="分析数据的目的是："><a href="#分析数据的目的是：" class="headerlink" title="分析数据的目的是："></a>分析数据的目的是：</h2><p>一、及时发现异常。<br>二、找到数据之间的因果关系。</p>
+<hr>
+<h2 id="分析数据用到的A-B实验验证方法报告模板"><a href="#分析数据用到的A-B实验验证方法报告模板" class="headerlink" title="分析数据用到的A/B实验验证方法报告模板"></a>分析数据用到的A/B实验验证方法报告模板</h2><p><img src="/imgg/AB%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF.png" alt="picture"></p>
+<hr>
+<h2 id="数据分析的常见问题"><a href="#数据分析的常见问题" class="headerlink" title="数据分析的常见问题"></a>数据分析的常见问题</h2><p>1、为什么要分析数据？<br>2、数据分析如何实现？<br>3、如何进A/B测试？<br>4、有哪些分析框架和方法？<br>5、如何基于数据创造价值？<br>6、如何基于数据训练算法？</p>
+<h2 id="个人回答-（一）为什么要分析数据？"><a href="#个人回答-（一）为什么要分析数据？" class="headerlink" title="个人回答:（一）为什么要分析数据？"></a>个人回答:（一）为什么要分析数据？</h2><p>1.我认为分析数据是这个社会逐渐从非必要转变成必要的一项技能。诸多的行业都是有着千万量级的数据，<br>  行业所关心的利润就是从数据中可得出，我们只要遵循mece法则将数据进行筛选，量化，逻辑拼接，就可<br>  以得到商业核心价值所在。企业发展趋势，走向都可以由数据探索挖掘中得知。<br>2.分析数据也可以为企业把脉，快，狠，准的查找出异常值，找到数据之间的因果关系。<br>3.在平稳情况下的净资产利润率上逐步提高，为企业做出贡献。</p>
+<h2 id="（二）数据分析如何实现？"><a href="#（二）数据分析如何实现？" class="headerlink" title="（二）数据分析如何实现？"></a>（二）数据分析如何实现？</h2><p>1.首先是观测（对事物形成客观的认识）其次再实验（发现规律，验证假设）最后应用（不断基于数据反馈迭代产品）</p>
+<h2 id="（三）如何进A-B测试？"><a href="#（三）如何进A-B测试？" class="headerlink" title="（三）如何进A/B测试？"></a>（三）如何进A/B测试？</h2><p>1.实验目标-&gt;实验假设-&gt;实验打分-&gt;实验指标-&gt;实验受众-&gt;实验版本-&gt;开发验收-&gt;实验结果-&gt;实验分析-&gt;后续计划</p>
+<h2 id="四-有哪些分析框架和方法？"><a href="#四-有哪些分析框架和方法？" class="headerlink" title="(四) 有哪些分析框架和方法？"></a>(四) 有哪些分析框架和方法？</h2><p>1（方法） 流程拆解法、杜邦分析法、象限拆解法、二分法<br>2（框架） AARRR模型、5W1H模型、RFM象限模型、SWOT态势分析模型、PEST国家政治制度分析模型、漏斗模型</p>
+<h2 id="（五）如何基于数据创造价值？"><a href="#（五）如何基于数据创造价值？" class="headerlink" title="（五）如何基于数据创造价值？"></a>（五）如何基于数据创造价值？</h2><p>1.异常点解决=利润价值<br>2.数据趋势=未来评估价值<br>3.数据高峰阶段=决策时机价值<br>4.数据合理，有效=商业价值</p>
+<h2 id="（六）如何基于数据训练算法？"><a href="#（六）如何基于数据训练算法？" class="headerlink" title="（六）如何基于数据训练算法？"></a>（六）如何基于数据训练算法？</h2><p>1.为算法设定明确的业务目标-&gt;为算法提供高质量的数据-&gt;判断算法是否真的创造了实际价值-&gt;帮助业务更好的使用算法</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>聊聊我们的贝叶斯定理</title>
+    <url>/2021/12/18/%E8%81%8A%E8%81%8A%E6%88%91%E4%BB%AC%E7%9A%84%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<h2 id="可爱的贝叶斯定理"><a href="#可爱的贝叶斯定理" class="headerlink" title="可爱的贝叶斯定理"></a>可爱的贝叶斯定理</h2><p>我们知道伯努利事件，它都是每个独立的事件组成。<br>贝叶斯定理则是在伯努利事件的基础上进行对某些事件的概率确定。</p>
+<p>简单的如图所示，只能用最蠢的方式去做这种题。^ - ^<br><img src="/imgg/%E6%A6%82%E7%8E%87%E9%A2%98%E7%9B%AE.png" alt="题目"><br><img src="/imgg/%E9%A2%98%E7%9B%AE%E7%AD%94%E6%A1%88.jpg" alt="题目答案"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Excel报表制作</title>
+    <url>/2022/01/06/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%BC%94%E7%A4%BA/Excel%E6%8A%A5%E5%91%8A%E5%88%B6%E4%BD%9C/</url>
+    <content><![CDATA[<h2 id="Excel周报制作"><a href="#Excel周报制作" class="headerlink" title="Excel周报制作"></a>Excel周报制作</h2><p>步骤：<br>1、先设置重要的指标标签（结果指标和过程指标）,并且额外用数据有效性对平台进行可选择性划分，设置业务进度和目标。<br>2、时间轴作为起始字段，把数据中重要的字段提取出来。利用if函数判断平台，再sumifs函数嵌套index和match进行操作（重点）。<br>3、数据可视化（迷你曲线图、数据区域添加规则低于平均值标下划线并加粗、周环比低于0位红色向下箭头、高于0位绿色向上箭头）<br>字体颜色，位置、行的填充色等。<br><img src="/imgg/Excel%E5%91%A8%E6%8A%A5.png" alt="Excel"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>切比雪夫定理的概述</title>
+    <url>/2021/12/18/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%BC%94%E7%A4%BA/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<hr>
+<h2 id="切比雪夫定理"><a href="#切比雪夫定理" class="headerlink" title="切比雪夫定理"></a>切比雪夫定理</h2><p>有75%的数据在3个标准差的范围内;<br>有89%的数据在5个标准差的范围内;<br>有98%的数据在7个标准差的范围内;</p>
+<h2 id="切比雪夫定理升级版（箱线图）和（正态分布图）"><a href="#切比雪夫定理升级版（箱线图）和（正态分布图）" class="headerlink" title="切比雪夫定理升级版（箱线图）和（正态分布图）"></a>切比雪夫定理升级版（箱线图）和（正态分布图）</h2><p>正态分布中，有68%的数据在1个标准差的范围内;<br>正态分布中，有95%的数据在2个标准差的范围内;<br>正态分布中，有99.8%的数据在3个标准差的范围内;</p>
+<p><img src="/imgg/deng.jpg" alt="星星点灯"><br>–来自李鸿的蜡烛灯</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
 </search>
