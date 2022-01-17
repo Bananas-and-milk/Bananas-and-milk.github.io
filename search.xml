@@ -16,10 +16,49 @@
       </tags>
   </entry>
   <entry>
+    <title>MySql简单窗口函数运用</title>
+    <url>/2022/01/10/MySql%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="简单的窗口函数运用"><a href="#简单的窗口函数运用" class="headerlink" title="简单的窗口函数运用"></a>简单的窗口函数运用</h2><p>排名窗口函数分三种: rank() over()        序列：  1  1  3  4  5 5 7….<br>           dense_rank() over()  序列:   1  1  2  3  4 4 5….<br>           row_number() over()  序列：  1  2  3  4  5 6 7….<br>偏移分析函数语法<br>            lag(字段名，偏移量,[默认值]) over()  向前偏移<br>            lead(字段名，偏移量,[默认值]) over() 相反</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SQL牛客网第十二题详细解答（错题笔记）</title>
     <url>/2022/01/13/Mysql%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E8%A7%A3%E9%A2%98%E8%BF%87%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="MySQL牛客网第十二题详细解答"><a href="#MySQL牛客网第十二题详细解答" class="headerlink" title="MySQL牛客网第十二题详细解答"></a>MySQL牛客网第十二题详细解答</h1><p>本题需求的是查找每个部门薪水最高的员工<br>看似非常简单，实则确实简单<br>一错：有个坑是 group by聚合部门名后dept_no占了主列，那么员工名emp_no字段就不能出现在第一列上。但题目要求先查看员工名emp_no，所以想一步登天还需绕路。<br>二错：将聚合好的dept_no列和最高工资各放在where dept_no 和 salary 处<br>那么聚合好的dept_no能够完美的确定下来，但是salary不能，因为你的最高工资在不同部门上可能存在相同工资<br>比如：部门001的员工工资分别为10 和 10 部门002的员工工资也分别为 10 和 10<br>那么筛选最高工资的时候，虽然用聚合了dept_no ，但还是无法分别这些10都来自于谁，所以在最后出现了异值。</p>
 <p>解决方式：一错就在原基础上绕路，分别对dept_no和salary进行判定即可绕路<br>         二错使用where和并形式来聚合。我现在才知道where可以带两字段进行判断的。涨知识了。<br>问题：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98.png" alt="mysql"><br>解答：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98%E7%AD%94%E6%A1%88.png" alt="mysql"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tableau作品1</title>
+    <url>/2022/01/10/Tableau%E4%B8%8A%E6%89%8B%E5%88%B6%E4%BD%9C/</url>
+    <content><![CDATA[<h2 id="数据灵感来源"><a href="#数据灵感来源" class="headerlink" title="数据灵感来源"></a>数据灵感来源</h2><p>大数据时代，人们对数据的认识高度以及了解深度已经到达了一定重视，众多公司对数据人才的需求越是愈发激烈。<br>本次调研就来看看是否存在真实性</p>
+<h2 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h2><p>某网站上分享的有关数据产业招聘岗位汇总。</p>
+<h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><p><img src="/imgg/Tableau%E4%BD%9C%E5%93%811.png" alt="Tableau"><br><img src="/imgg/Tableau%E4%BD%9C%E5%93%812.png" alt="Tableau"></p>
+<h2 id="数据分析-个人观点"><a href="#数据分析-个人观点" class="headerlink" title="数据分析(个人观点)"></a>数据分析(个人观点)</h2><p>专门针对数据产业上人数最多的      北京        地区进行分析<br><img src="/imgg/Tableau%E4%BD%9C%E5%93%811%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%A7%82%E7%82%B9.png" alt="Xmind"></p>
+<hr>
+<h1 id="调研总结"><a href="#调研总结" class="headerlink" title="调研总结"></a>调研总结</h1><p>1、数据产业确实掀起了一大波风潮，很多公司都对数据岗位的需求也确实激烈（激烈在于数据岗位的种类，薪资等方面），特别是北京地区。<br>2、数据产业都需要一些经验丰厚的职场人才能完全胜任，年轻人可不容易。</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tableau练习demo</title>
+    <url>/2022/01/08/Tableau%E7%BB%83%E4%B9%A0%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h2 id="Tableau安装"><a href="#Tableau安装" class="headerlink" title="Tableau安装"></a>Tableau安装</h2><p>官网下载64位，学生认证注册激活(还好及时注册，不然毕业就没免费试用了^ _ ^)。</p>
+<h2 id="数据连接"><a href="#数据连接" class="headerlink" title="数据连接"></a>数据连接</h2><p>Excel的CSV文件直接用文本文件进行打开和连接。</p>
+<h2 id="数据可视化原理"><a href="#数据可视化原理" class="headerlink" title="数据可视化原理"></a>数据可视化原理</h2><p>维度、度量</p>
+<h2 id="基础图表制作"><a href="#基础图表制作" class="headerlink" title="基础图表制作"></a>基础图表制作</h2><p>百分之90多的数据可视化都可以用折线图、柱状图、散点图、饼图（被誉为四大金刚）</p>
+<h2 id="BI仪表盘搭建"><a href="#BI仪表盘搭建" class="headerlink" title="BI仪表盘搭建"></a>BI仪表盘搭建</h2><p>(直接上图！！)<br><img src="/imgg/demo1.png" alt="Tableau"><br><img src="/imgg/demo2.png" alt="Tableau"></p>
 <hr>
 ]]></content>
       <tags>
@@ -42,45 +81,6 @@
 <p><img src="/imgg/pandas%E7%AC%AC%E4%B8%83%E9%A2%98.png" alt="Pandas"></p>
 <p><img src="/imgg/pandas%E7%AC%AC%E5%85%AB%E9%A2%98.png" alt="Pandas"></p>
 <p><img src="/imgg/pandas%E7%AC%AC%E4%B9%9D%E9%A2%98.png" alt="Pandas"></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySql简单窗口函数运用</title>
-    <url>/2022/01/10/MySql%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="简单的窗口函数运用"><a href="#简单的窗口函数运用" class="headerlink" title="简单的窗口函数运用"></a>简单的窗口函数运用</h2><p>排名窗口函数分三种: rank() over()        序列：  1  1  3  4  5 5 7….<br>           dense_rank() over()  序列:   1  1  2  3  4 4 5….<br>           row_number() over()  序列：  1  2  3  4  5 6 7….<br>偏移分析函数语法<br>            lag(字段名，偏移量,[默认值]) over()  向前偏移<br>            lead(字段名，偏移量,[默认值]) over() 相反</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tableau练习demo</title>
-    <url>/2022/01/08/Tableau%E7%BB%83%E4%B9%A0%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<h2 id="Tableau安装"><a href="#Tableau安装" class="headerlink" title="Tableau安装"></a>Tableau安装</h2><p>官网下载64位，学生认证注册激活(还好及时注册，不然毕业就没免费试用了^ _ ^)。</p>
-<h2 id="数据连接"><a href="#数据连接" class="headerlink" title="数据连接"></a>数据连接</h2><p>Excel的CSV文件直接用文本文件进行打开和连接。</p>
-<h2 id="数据可视化原理"><a href="#数据可视化原理" class="headerlink" title="数据可视化原理"></a>数据可视化原理</h2><p>维度、度量</p>
-<h2 id="基础图表制作"><a href="#基础图表制作" class="headerlink" title="基础图表制作"></a>基础图表制作</h2><p>百分之90多的数据可视化都可以用折线图、柱状图、散点图、饼图（被誉为四大金刚）</p>
-<h2 id="BI仪表盘搭建"><a href="#BI仪表盘搭建" class="headerlink" title="BI仪表盘搭建"></a>BI仪表盘搭建</h2><p>(直接上图！！)<br><img src="/imgg/demo1.png" alt="Tableau"><br><img src="/imgg/demo2.png" alt="Tableau"></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tableau作品1</title>
-    <url>/2022/01/10/Tableau%E4%B8%8A%E6%89%8B%E5%88%B6%E4%BD%9C/</url>
-    <content><![CDATA[<h2 id="数据灵感来源"><a href="#数据灵感来源" class="headerlink" title="数据灵感来源"></a>数据灵感来源</h2><p>大数据时代，人们对数据的认识高度以及了解深度已经到达了一定重视，众多公司对数据人才的需求越是愈发激烈。<br>本次调研就来看看是否存在真实性</p>
-<h2 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h2><p>某网站上分享的有关数据产业招聘岗位汇总。</p>
-<h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><p><img src="/imgg/Tableau%E4%BD%9C%E5%93%811.png" alt="Tableau"><br><img src="/imgg/Tableau%E4%BD%9C%E5%93%812.png" alt="Tableau"></p>
-<h2 id="数据分析-个人观点"><a href="#数据分析-个人观点" class="headerlink" title="数据分析(个人观点)"></a>数据分析(个人观点)</h2><p>专门针对数据产业上人数最多的      北京        地区进行分析<br><img src="/imgg/Tableau%E4%BD%9C%E5%93%811%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%A7%82%E7%82%B9.png" alt="Xmind"></p>
-<hr>
-<h1 id="调研总结"><a href="#调研总结" class="headerlink" title="调研总结"></a>调研总结</h1><p>1、数据产业确实掀起了一大波风潮，很多公司都对数据岗位的需求也确实激烈（激烈在于数据岗位的种类，薪资等方面），特别是北京地区。<br>2、数据产业都需要一些经验丰厚的职场人才能完全胜任，年轻人可不容易。</p>
 <hr>
 ]]></content>
       <tags>
