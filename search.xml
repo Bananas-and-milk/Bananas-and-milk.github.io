@@ -26,6 +26,17 @@
       </tags>
   </entry>
   <entry>
+    <title>SQL牛客网第十二题详细解答（错题笔记）</title>
+    <url>/2022/01/13/Mysql%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E8%A7%A3%E9%A2%98%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="MySQL牛客网第十二题详细解答"><a href="#MySQL牛客网第十二题详细解答" class="headerlink" title="MySQL牛客网第十二题详细解答"></a>MySQL牛客网第十二题详细解答</h1><p>本题需求的是查找每个部门薪水最高的员工<br>看似非常简单，实则确实简单<br>一错：有个坑是 group by聚合部门名后dept_no占了主列，那么员工名emp_no字段就不能出现在第一列上。但题目要求先查看员工名emp_no，所以想一步登天还需绕路。<br>二错：将聚合好的dept_no列和最高工资各放在where dept_no 和 salary 处<br>那么聚合好的dept_no能够完美的确定下来，但是salary不能，因为你的最高工资在不同部门上可能存在相同工资<br>比如：部门001的员工工资分别为10 和 10 部门002的员工工资也分别为 10 和 10<br>那么筛选最高工资的时候，虽然用聚合了dept_no ，但还是无法分别这些10都来自于谁，所以在最后出现了异值。</p>
+<p>解决方式：一错就在原基础上绕路，分别对dept_no和salary进行判定即可绕路<br>         二错使用where和并形式来聚合。我现在才知道where可以带两字段进行判断的。涨知识了。<br>问题：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98.png" alt="mysql"><br>解答：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98%E7%AD%94%E6%A1%88.png" alt="mysql"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pandas基础</title>
     <url>/2022/01/14/Pandas%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><p>首先学习的Pandas的数据预处理<br>本次学习我结合了SQL语言来进行缝合，用Python语言来效仿SQL语言</p>
@@ -41,17 +52,6 @@
 <p><img src="/imgg/pandas%E7%AC%AC%E4%B8%83%E9%A2%98.png" alt="Pandas"></p>
 <p><img src="/imgg/pandas%E7%AC%AC%E5%85%AB%E9%A2%98.png" alt="Pandas"></p>
 <p><img src="/imgg/pandas%E7%AC%AC%E4%B9%9D%E9%A2%98.png" alt="Pandas"></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL牛客网第十二题详细解答（错题笔记）</title>
-    <url>/2022/01/13/Mysql%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E8%A7%A3%E9%A2%98%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="MySQL牛客网第十二题详细解答"><a href="#MySQL牛客网第十二题详细解答" class="headerlink" title="MySQL牛客网第十二题详细解答"></a>MySQL牛客网第十二题详细解答</h1><p>本题需求的是查找每个部门薪水最高的员工<br>看似非常简单，实则确实简单<br>一错：有个坑是 group by聚合部门名后dept_no占了主列，那么员工名emp_no字段就不能出现在第一列上。但题目要求先查看员工名emp_no，所以想一步登天还需绕路。<br>二错：将聚合好的dept_no列和最高工资各放在where dept_no 和 salary 处<br>那么聚合好的dept_no能够完美的确定下来，但是salary不能，因为你的最高工资在不同部门上可能存在相同工资<br>比如：部门001的员工工资分别为10 和 10 部门002的员工工资也分别为 10 和 10<br>那么筛选最高工资的时候，虽然用聚合了dept_no ，但还是无法分别这些10都来自于谁，所以在最后出现了异值。</p>
-<p>解决方式：一错就在原基础上绕路，分别对dept_no和salary进行判定即可绕路<br>         二错使用where和并形式来聚合。我现在才知道where可以带两字段进行判断的。涨知识了。<br>问题：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98.png" alt="mysql"><br>解答：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98%E7%AD%94%E6%A1%88.png" alt="mysql"></p>
 <hr>
 ]]></content>
       <tags>
@@ -143,6 +143,31 @@ return datalist
       </tags>
   </entry>
   <entry>
+    <title>Python连接云端数据库</title>
+    <url>/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h2 id="云端数据库"><a href="#云端数据库" class="headerlink" title="云端数据库"></a>云端数据库</h2><p>我在阿里云上创建了一个云端的数据库，所以首先将获取下来的数据保存在excel.xls文件中，<br>在DataGrip软件（一款数据库软件）中点击获取数据源，添加云端数据库的服务器主机地址。还有一个就是需要mysql的驱动程序，程序需自己下载并导入。<br>主机地址填入操作如以下图：<br><img src="/imgg/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5.png" alt="DataGrip"></p>
+<h2 id="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"><a href="#Python上操作数据库（可进行数据库操作、重要筛选内容导出）" class="headerlink" title="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"></a>Python上操作数据库（可进行数据库操作、重要筛选内容导出）</h2><p>import pymysql</p>
+<p>con=pymysql.connect(<br>    host=’数据库服务器主机地址’,<br>    user=’服务器账号’,<br>    password=’账号密码’,<br>    db=’数据库名字’,<br>    port=端口号,<br>    charset=’utf8’<br>    )</p>
+<p>cur=con.cursor()</p>
+<p>sql=’select 概况 from 豆瓣电影top250’<br>cur.execute(sql)</p>
+<p>data=cur.fetchall()  #查看表里所有数据（sql查询中的所有数据）</p>
+<p>with open(“shujuku.txt”, “w”, encoding=”utf-8”) as fout:  #创建txt文件来保存<br>      for temp in data:<br>          temp=str(temp)<br>          fout.write(temp + “\n”)</p>
+<p>con.close()<br>cur.close()</p>
+<h2 id="Excel的文件保存数据架构"><a href="#Excel的文件保存数据架构" class="headerlink" title="Excel的文件保存数据架构"></a>Excel的文件保存数据架构</h2><p>#九九乘法表导入到excel.<br>for i in range(0,10):<br>    for k in range(1,i+1):<br>        print(“{}<em>{}={}\t”.format(k,i,i</em>k),end=””)<br>    print()</p>
+<p>import xlwt<br>workbook = xlwt.Workbook(encoding=”utf-8”)  #创建workbook对象<br>worksheet=workbook.add_sheet(‘sheet1’)      #创建工作表</p>
+<p>for i in range(0,10):<br>    for k in range(1,i+1):<br>        worksheet.write(i-1,k-1,”{}<em>{}={}\t”.format(k,i,i</em>k))<br>                                          #在表一中（0,0）格在写入hello</p>
+<p>workbook.save(‘student.xls’)                #保存数据表</p>
+<h2 id="re库的小积累（no重点）"><a href="#re库的小积累（no重点）" class="headerlink" title="re库的小积累（no重点）"></a>re库的小积累（no重点）</h2><p>#正则表达式：字符串模式 （判断字符串符合一定的标准）</p>
+<p>import re<br>#创建模式对象<br>pat =re.compile(“AA”) #此处的AA是正则表达式，去验证其他的字符串<br>#m = pat.search(“CBA”)  # search字符串被校验的内容<br>#m = pat.search(“ABCAA”)<br>#m = pat.search(“AABCAADDCCAAA”) #search方法，进行比对查找<br>#没有模式对象<br>#m=re.search(“asd”,”Aasd”)<br>#print(m)<br>#print(re.findall(“a”, “ASDaDFGAa”))  #前面是正则表达式，后偶是被校验的字符串<br>#print(re.findall(“[A-Z]”,”ASDaDFGAa”))<br>#print(re.findall(“[A-Z]+”,”ASDaDFGAa”))</p>
+<p>#sub<br>print(re.sub(“a”, “A”, “abcdcasd”))  #在第三个字符串中把a全部替换为A</p>
+<p>#建议在正则表达式中，在被比较的字符串前面加上r，不用担心转义字符的问题</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python基础（文件操作、捕获异常）</title>
     <url>/2022/02/17/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%89/</url>
     <content><![CDATA[<h2 id="Python代码文件操作"><a href="#Python代码文件操作" class="headerlink" title="Python代码文件操作"></a>Python代码文件操作</h2><p>f=open(“ddd.txt”,“w”)   </p>
@@ -194,31 +219,6 @@ return datalist
 <h2 id="Python-urllib包拓展"><a href="#Python-urllib包拓展" class="headerlink" title="Python urllib包拓展"></a>Python urllib包拓展</h2><p>import urllib.request<br>import urllib.parse</p>
 <p>try:<br>    response=urllib.request.urlopen(“<a href="http://www.baidu.com&quot;,timeout=1/">http://www.baidu.com&quot;，timeout=1</a> #超时处理)<br>    page=response.read()<br>    print(page.decode(‘utf-8’))<br>except TypeError as result:<br>    print(“错误原因:”,result)</p>
 <h3 id="post访问-访问模式有四种-get-post-patch-put"><a href="#post访问-访问模式有四种-get-post-patch-put" class="headerlink" title="post访问(访问模式有四种(get/post/patch/put))"></a>post访问(访问模式有四种(get/post/patch/put))</h3><p>data = bytes(urllib.parse.urlencode({“hello”:”world”}),encoding=”utf-8”)<br>response=urllib.request.urlopen(“<a href="http://httpbin.org/post&quot;,data=">http://httpbin.org/post&quot;,data=</a> data)<br>page=response.read()<br>print(page.decode(‘utf-8’))</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python连接云端数据库</title>
-    <url>/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<h2 id="云端数据库"><a href="#云端数据库" class="headerlink" title="云端数据库"></a>云端数据库</h2><p>我在阿里云上创建了一个云端的数据库，所以首先将获取下来的数据保存在excel.xls文件中，<br>在DataGrip软件（一款数据库软件）中点击获取数据源，添加云端数据库的服务器主机地址。还有一个就是需要mysql的驱动程序，程序需自己下载并导入。<br>主机地址填入操作如以下图：<br><img src="/imgg/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5.png" alt="DataGrip"></p>
-<h2 id="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"><a href="#Python上操作数据库（可进行数据库操作、重要筛选内容导出）" class="headerlink" title="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"></a>Python上操作数据库（可进行数据库操作、重要筛选内容导出）</h2><p>import pymysql</p>
-<p>con=pymysql.connect(<br>    host=’数据库服务器主机地址’,<br>    user=’服务器账号’,<br>    password=’账号密码’,<br>    db=’数据库名字’,<br>    port=端口号,<br>    charset=’utf8’<br>    )</p>
-<p>cur=con.cursor()</p>
-<p>sql=’select 概况 from 豆瓣电影top250’<br>cur.execute(sql)</p>
-<p>data=cur.fetchall()  #查看表里所有数据（sql查询中的所有数据）</p>
-<p>with open(“shujuku.txt”, “w”, encoding=”utf-8”) as fout:  #创建txt文件来保存<br>      for temp in data:<br>          temp=str(temp)<br>          fout.write(temp + “\n”)</p>
-<p>con.close()<br>cur.close()</p>
-<h2 id="Excel的文件保存数据架构"><a href="#Excel的文件保存数据架构" class="headerlink" title="Excel的文件保存数据架构"></a>Excel的文件保存数据架构</h2><p>#九九乘法表导入到excel.<br>for i in range(0,10):<br>    for k in range(1,i+1):<br>        print(“{}<em>{}={}\t”.format(k,i,i</em>k),end=””)<br>    print()</p>
-<p>import xlwt<br>workbook = xlwt.Workbook(encoding=”utf-8”)  #创建workbook对象<br>worksheet=workbook.add_sheet(‘sheet1’)      #创建工作表</p>
-<p>for i in range(0,10):<br>    for k in range(1,i+1):<br>        worksheet.write(i-1,k-1,”{}<em>{}={}\t”.format(k,i,i</em>k))<br>                                          #在表一中（0,0）格在写入hello</p>
-<p>workbook.save(‘student.xls’)                #保存数据表</p>
-<h2 id="re库的小积累（no重点）"><a href="#re库的小积累（no重点）" class="headerlink" title="re库的小积累（no重点）"></a>re库的小积累（no重点）</h2><p>#正则表达式：字符串模式 （判断字符串符合一定的标准）</p>
-<p>import re<br>#创建模式对象<br>pat =re.compile(“AA”) #此处的AA是正则表达式，去验证其他的字符串<br>#m = pat.search(“CBA”)  # search字符串被校验的内容<br>#m = pat.search(“ABCAA”)<br>#m = pat.search(“AABCAADDCCAAA”) #search方法，进行比对查找<br>#没有模式对象<br>#m=re.search(“asd”,”Aasd”)<br>#print(m)<br>#print(re.findall(“a”, “ASDaDFGAa”))  #前面是正则表达式，后偶是被校验的字符串<br>#print(re.findall(“[A-Z]”,”ASDaDFGAa”))<br>#print(re.findall(“[A-Z]+”,”ASDaDFGAa”))</p>
-<p>#sub<br>print(re.sub(“a”, “A”, “abcdcasd”))  #在第三个字符串中把a全部替换为A</p>
-<p>#建议在正则表达式中，在被比较的字符串前面加上r，不用担心转义字符的问题</p>
 <hr>
 ]]></content>
       <tags>
