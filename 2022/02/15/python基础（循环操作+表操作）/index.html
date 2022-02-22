@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python基础（循环操作+表操作） | Think on the shoulders of giants</title><meta name="keywords" content="学习"><meta name="author" content="Bananas-Wang"><meta name="copyright" content="Bananas-Wang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="九九乘法表嵌套For循环  for i in range(1,10):    for j in range(1,i+1)        print(‘{}x{}&#x3D;{}\t’.format(j,i,i*j),end&#x3D;’’)    print(‘’)提示：里面的循环要跟着外面的For走  列表的增删改查增：list.insert  age:list.insert(下标,”元素”)删: del list">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础（循环操作+表操作）">
+<meta property="og:url" content="http://example.com/2022/02/15/python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%BE%AA%E7%8E%AF%E6%93%8D%E4%BD%9C+%E8%A1%A8%E6%93%8D%E4%BD%9C%EF%BC%89/index.html">
+<meta property="og:site_name" content="Think on the shoulders of giants">
+<meta property="og:description" content="九九乘法表嵌套For循环  for i in range(1,10):    for j in range(1,i+1)        print(‘{}x{}&#x3D;{}\t’.format(j,i,i*j),end&#x3D;’’)    print(‘’)提示：里面的循环要跟着外面的For走  列表的增删改查增：list.insert  age:list.insert(下标,”元素”)删: del list">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picsum.photos/id/225/1500/979">
+<meta property="article:published_time" content="2022-02-15T02:14:35.000Z">
+<meta property="article:modified_time" content="2022-02-15T02:58:15.706Z">
+<meta property="article:author" content="Bananas-Wang">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/id/225/1500/979"><link rel="shortcut icon" href="/img/favicon1.png"><link rel="canonical" href="http://example.com/2022/02/15/python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%BE%AA%E7%8E%AF%E6%93%8D%E4%BD%9C+%E8%A1%A8%E6%93%8D%E4%BD%9C%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python基础（循环操作+表操作）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-15 10:58:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://picsum.photos/id/225/1500/979')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Think on the shoulders of giants</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Python基础（循环操作+表操作）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-15T02:14:35.000Z" title="发表于 2022-02-15 10:14:35">2022-02-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-15T02:58:15.706Z" title="更新于 2022-02-15 10:58:15">2022-02-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">522</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Python基础（循环操作+表操作）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="九九乘法表"><a href="#九九乘法表" class="headerlink" title="九九乘法表"></a>九九乘法表</h2><pre><code>嵌套For循环
+</code></pre>
+<p>for i in range(1,10):<br>    for j in range(1,i+1)<br>        print(‘{}x{}={}\t’.format(j,i,i*j),end=’’)<br>    print(‘’)<br>提示：里面的循环要跟着外面的For走</p>
+<hr>
+<h2 id="列表的增删改查"><a href="#列表的增删改查" class="headerlink" title="列表的增删改查"></a>列表的增删改查</h2><p>增：list.insert  age:list.insert(下标,”元素”)<br>删: del list     #弹出最后一个元素<br>删：list.pop()   #删除末尾的一个元素<br>改：list[1]=”?”  #直接对着下标进行更改<br>查：if语句进行判断   age:   a=input(“ddd”)<br>                           if a in list:<br>                           print(“yes”)<br>                        else:<br>                            print(“meiyou”)<br>查找元素位置：list.index(“what”,1,4) 范围区间左闭右开 age:a=[“a”,”b”,”c”,”a”,”b”]<br>                                                    print(a.index(“a”,1,4)) 输出为3<br>统计：list.count(“what”)  #统计出现的次数<br>a.reverse()      #将列表所有的元素翻转<br>a.sort()排序    升序<br>a.sort(reverse=true)降序</p>
+<h2 id="作业1：在办公室中随机分配人数-列表操作"><a href="#作业1：在办公室中随机分配人数-列表操作" class="headerlink" title="作业1：在办公室中随机分配人数   列表操作"></a>作业1：在办公室中随机分配人数   列表操作</h2><p>import random<br>offices= [[],[],[]]</p>
+<p>names=[‘A’,’B’,’C’,’D’,’E’,’F’,’G’,’H’]</p>
+<p>for name in names:<br>    index=random.randint(0,2)<br>    offices[index].append(name)   </p>
+<p>i=1<br>for office in offices:<br>    print(‘在第%d个办公室中,有%d位老师’%(i,len(office)))<br>    i+=1<br>    for name in office:<br>        print(‘%s’%name,end=’\t’)<br>    print(‘\n’)<br>    print(‘-‘*20)</p>
+<h2 id="作业2：对商品列表进行整理工作，并且完成选择商品进入购物车操作，提供总计"><a href="#作业2：对商品列表进行整理工作，并且完成选择商品进入购物车操作，提供总计" class="headerlink" title="作业2：对商品列表进行整理工作，并且完成选择商品进入购物车操作，提供总计"></a>作业2：对商品列表进行整理工作，并且完成选择商品进入购物车操作，提供总计</h2><p>1.products=[[“iphone”,6888],[“MacPro”,14800],[“小米6”,2499],[“Coffee”,31],[“Book”,60],[“Nike”,699]]<br>需打印出以下格式:</p>
+<p>——  商品列表  ——</p>
+<p>0 iphone 6888<br>1 MacPro 14800<br>2小米6     2499<br>3 Coffee    31<br>4 Book     60<br>5 Nike     699 </p>
+<p> products=[[“iphone”,6888],[“MacPro”,14800],[“小米6”,2499],[“Coffee”,31],[“Book”,60],[“Nike”,699]]<br>print(‘-‘*6,’商品列表’,’-‘*6)   #商品信息<br>i=0<br>for xuhao in products:<br>    print(‘{}\t{}\t{}’.format(i,xuhao[0],xuhao[1]))<br>    i+=1</p>
+<p>newproducts=[]  #你的带序号的商品列表</p>
+<p>for i in range(0,len(products)):<br>    products[i].insert(0,i)<br>newproducts=products</p>
+<p>market=[]  #你的购物车列表<br>sum=0<br>while 1:<br>    input_=input(“请你选择你想要购买的商品,选择该商品编号(按q进行保存并结账):”)<br>    if input_!=”q” and int(len(input_))==1:<br>        input_=int(input_)<br>        market.append(newproducts[input_])<br>        sum+=int(newproducts[input_][2])<br>    elif input_==’q’:<br>        market.sort()<br>        print(“你的购物车如下\n”)<br>        for shangpin in market:<br>            print(‘{}\t{}\t{}’.format(shangpin[0],shangpin[1],shangpin[2]))<br>        print(‘总计:%d’%sum)<br>        break<br>    else:<br>        print(“请输入正确的商品编码”)</p>
+<hr>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a></div><div class="post_share"><div class="social-share" data-image="https://picsum.photos/id/225/1500/979" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/15/Python%E5%9F%BA%E7%A1%80(%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8%E8%AE%BF%E9%97%AE%E3%80%81%E5%AD%97%E5%85%B8%E5%90%88%E5%B9%B6%E3%80%81%E8%87%AA%E5%8A%A8%E5%8C%B9%E9%85%8D%E5%BA%8F%E5%8F%B7%E3%80%81%E9%9B%86%E5%90%88%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F)/"><img class="prev-cover" src="https://picsum.photos/id/220/3872/2416" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python基础(元组、字典访问、字典合并、自动匹配序号、集合、全局变量局部变量)</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/14/Pandas%E5%9F%BA%E7%A1%80/"><img class="next-cover" src="https://picsum.photos/id/835/5472/3648" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Pandas基础</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/05/Excel%E5%BA%94%E7%94%A8/" title="Excel应用"><img class="cover" src="https://picsum.photos/id/867/4288/2848" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-05</div><div class="title">Excel应用</div></div></a></div><div><a href="/2022/01/10/MySql%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8/" title="MySql简单窗口函数运用"><img class="cover" src="https://picsum.photos/id/828/3165/2374" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-10</div><div class="title">MySql简单窗口函数运用</div></div></a></div><div><a href="/2022/01/14/Pandas%E5%9F%BA%E7%A1%80/" title="Pandas基础"><img class="cover" src="https://picsum.photos/id/835/5472/3648" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-14</div><div class="title">Pandas基础</div></div></a></div><div><a href="/2022/01/13/Mysql%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E8%A7%A3%E9%A2%98%E8%BF%87%E7%A8%8B/" title="SQL牛客网第十二题详细解答（错题笔记）"><img class="cover" src="https://picsum.photos/id/985/5325/3550" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-13</div><div class="title">SQL牛客网第十二题详细解答（错题笔记）</div></div></a></div><div><a href="/2022/02/18/Python(%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE)/" title="Python(爬虫：获取数据)"><img class="cover" src="https://picsum.photos/id/883/3000/2000" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-18</div><div class="title">Python(爬虫：获取数据)</div></div></a></div><div><a href="/2022/02/19/Python(%E8%A7%A3%E6%9E%90%E6%95%B0%E6%8D%AE)/" title="Python(获取、解析、保存数据)"><img class="cover" src="https://picsum.photos/id/318/3264/2448" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-19</div><div class="title">Python(获取、解析、保存数据)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NTA5NC8zMTU2Mg=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Bananas-Wang</div><div class="author-info__description">老师你好！我是王同学</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Bananas-and-milk.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Bananas-and-milk" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:929134860@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://bananas-and-milk.github.io/" target="_blank" title="博客"><i class="fab fa-algolia"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">霓虹熄了，世界渐冷清。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">九九乘法表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">2.</span> <span class="toc-text">列表的增删改查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A1%EF%BC%9A%E5%9C%A8%E5%8A%9E%E5%85%AC%E5%AE%A4%E4%B8%AD%E9%9A%8F%E6%9C%BA%E5%88%86%E9%85%8D%E4%BA%BA%E6%95%B0-%E5%88%97%E8%A1%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">作业1：在办公室中随机分配人数   列表操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A2%EF%BC%9A%E5%AF%B9%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E8%BF%9B%E8%A1%8C%E6%95%B4%E7%90%86%E5%B7%A5%E4%BD%9C%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%AE%8C%E6%88%90%E9%80%89%E6%8B%A9%E5%95%86%E5%93%81%E8%BF%9B%E5%85%A5%E8%B4%AD%E7%89%A9%E8%BD%A6%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%8F%90%E4%BE%9B%E6%80%BB%E8%AE%A1"><span class="toc-number">4.</span> <span class="toc-text">作业2：对商品列表进行整理工作，并且完成选择商品进入购物车操作，提供总计</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Python连接云端数据库"><img src="https://picsum.photos/id/789/6016/4016" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python连接云端数据库"/></a><div class="content"><a class="title" href="/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Python连接云端数据库">Python连接云端数据库</a><time datetime="2022-02-22T10:48:45.000Z" title="发表于 2022-02-22 18:48:45">2022-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/19/Python(%E8%A7%A3%E6%9E%90%E6%95%B0%E6%8D%AE)/" title="Python(获取、解析、保存数据)"><img src="https://picsum.photos/id/318/3264/2448" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python(获取、解析、保存数据)"/></a><div class="content"><a class="title" href="/2022/02/19/Python(%E8%A7%A3%E6%9E%90%E6%95%B0%E6%8D%AE)/" title="Python(获取、解析、保存数据)">Python(获取、解析、保存数据)</a><time datetime="2022-02-19T01:25:11.000Z" title="发表于 2022-02-19 09:25:11">2022-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/18/Python(%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE)/" title="Python(爬虫：获取数据)"><img src="https://picsum.photos/id/883/3000/2000" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python(爬虫：获取数据)"/></a><div class="content"><a class="title" href="/2022/02/18/Python(%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE)/" title="Python(爬虫：获取数据)">Python(爬虫：获取数据)</a><time datetime="2022-02-18T02:03:10.000Z" title="发表于 2022-02-18 10:03:10">2022-02-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/18/Python%EF%BC%88%E7%88%AC%E8%99%AB%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%EF%BC%89/" title="Python(爬虫准备工作)"><img src="https://picsum.photos/id/885/4000/2667" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python(爬虫准备工作)"/></a><div class="content"><a class="title" href="/2022/02/18/Python%EF%BC%88%E7%88%AC%E8%99%AB%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%EF%BC%89/" title="Python(爬虫准备工作)">Python(爬虫准备工作)</a><time datetime="2022-02-18T01:55:10.000Z" title="发表于 2022-02-18 09:55:10">2022-02-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/17/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%89/" title="Python基础（文件操作、捕获异常）"><img src="https://picsum.photos/id/268/4228/2773" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python基础（文件操作、捕获异常）"/></a><div class="content"><a class="title" href="/2022/02/17/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%89/" title="Python基础（文件操作、捕获异常）">Python基础（文件操作、捕获异常）</a><time datetime="2022-02-17T03:10:45.000Z" title="发表于 2022-02-17 11:10:45">2022-02-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Bananas-Wang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">很高兴认识你。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-autoplay="true" data-id="7217555938" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="auto" data-loop="one" data-mutex="true" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
