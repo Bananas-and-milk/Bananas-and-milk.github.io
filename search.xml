@@ -16,7 +16,7 @@
       </tags>
   </entry>
   <entry>
-    <title>MySql简单窗口函数运用</title>
+    <title>MySql窗口函数（解决排名问题）</title>
     <url>/2022/01/10/MySql%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8/</url>
     <content><![CDATA[<h2 id="简单的窗口函数运用"><a href="#简单的窗口函数运用" class="headerlink" title="简单的窗口函数运用"></a>简单的窗口函数运用</h2><p>排名窗口函数分三种: rank() over()        序列：  1  1  3  4  5 5 7….<br>           dense_rank() over()  序列:   1  1  2  3  4 4 5….<br>           row_number() over()  序列：  1  2  3  4  5 6 7….<br>偏移分析函数语法<br>            lag(字段名，偏移量,[默认值]) over()  向前偏移<br>            lead(字段名，偏移量,[默认值]) over() 相反</p>
 <hr>
@@ -30,18 +30,6 @@
     <url>/2022/01/13/Mysql%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E8%A7%A3%E9%A2%98%E8%BF%87%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="MySQL牛客网第十二题详细解答"><a href="#MySQL牛客网第十二题详细解答" class="headerlink" title="MySQL牛客网第十二题详细解答"></a>MySQL牛客网第十二题详细解答</h1><p>本题需求的是查找每个部门薪水最高的员工<br>看似非常简单，实则确实简单<br>一错：有个坑是 group by聚合部门名后dept_no占了主列，那么员工名emp_no字段就不能出现在第一列上。但题目要求先查看员工名emp_no，所以想一步登天还需绕路。<br>二错：将聚合好的dept_no列和最高工资各放在where dept_no 和 salary 处<br>那么聚合好的dept_no能够完美的确定下来，但是salary不能，因为你的最高工资在不同部门上可能存在相同工资<br>比如：部门001的员工工资分别为10 和 10 部门002的员工工资也分别为 10 和 10<br>那么筛选最高工资的时候，虽然用聚合了dept_no ，但还是无法分别这些10都来自于谁，所以在最后出现了异值。</p>
 <p>解决方式：一错就在原基础上绕路，分别对dept_no和salary进行判定即可绕路<br>         二错使用where和并形式来聚合。我现在才知道where可以带两字段进行判断的。涨知识了。<br>问题：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98.png" alt="mysql"><br>解答：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98%E7%AD%94%E6%A1%88.png" alt="mysql"></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python(爬虫：获取数据)</title>
-    <url>/2022/02/18/Python(%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE)/</url>
-    <content><![CDATA[<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>age:<br>import urllib.request<br>import urllib.parse<br>def getData(baseurl):<br>    for i in range(0,10):<br>        url=baseurl+str(i*25)   #每页25个，循环10次则可以获取TOP250的数据<br>        html=askURL(url)        #保存每一页数据</p>
-<p>def askURL(url):<br>    head={“user-agent”:”Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36”}<br>    req=urllib.request.Request(url,headers=head)<br>    html = “”<br>    try:<br>        response=urllib.request.urlopen(req)<br>        page=response.read()<br>        html=page.decode(‘utf-8’)<br>                                        #print(page.decode(‘utf-8’))#打印<br>    except urllib.error.URLError as e:<br>        if hasattr(e,”code”):<br>            print(e.code)<br>        if hasattr(e,”reason”):<br>            print(e.reason)<br>    return html</p>
-<p>getData(“<a href="https://movie.douban.com/top250?start=&quot;">https://movie.douban.com/top250?start=&quot;</a>)</p>
 <hr>
 ]]></content>
       <tags>
@@ -71,18 +59,13 @@
       </tags>
   </entry>
   <entry>
-    <title>Python基础(元组、字典访问、字典合并、自动匹配序号、集合、全局变量局部变量)</title>
-    <url>/2022/02/15/Python%E5%9F%BA%E7%A1%80(%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8%E8%AE%BF%E9%97%AE%E3%80%81%E5%AD%97%E5%85%B8%E5%90%88%E5%B9%B6%E3%80%81%E8%87%AA%E5%8A%A8%E5%8C%B9%E9%85%8D%E5%BA%8F%E5%8F%B7%E3%80%81%E9%9B%86%E5%90%88%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F)/</url>
-    <content><![CDATA[<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>类型: tuple 元组<br>    : list  列表<br>当元组进行相加操作时，是重新创建一个新的元组来涵盖两个元组</p>
-<h2 id="字典访问"><a href="#字典访问" class="headerlink" title="字典访问"></a>字典访问</h2><p>增：chovy={“dd”:1,”ddd”:2}  chovy[“ID”]=what #直接用列表操作的[]符来确定键位并且直接赋值<br>删：del list[“key”]<br>清空： list.clear</p>
-<p>查：<br>print(info[“gender”])    #直接访问，会报错<br>print(info.get(“gender”) #使用get方法来找KEY  返回none   返回其他值用后加  info.get(“gender”,m) m为返回值</p>
-<p>list.keys()<br>list.values()<br>list.item()          #遍历所有的值</p>
-<p>tip：用for循环可以直接将里面的东西抽出来，包括元组，列表，字典<br>age: for key,value in info.item():<br>    print(“key=%s,value=%s”%(key,value))  强大功能  带多个元素也可以直接抽取</p>
-<h3 id="两字典合并"><a href="#两字典合并" class="headerlink" title="两字典合并"></a>两字典合并</h3><p>list.update(list1) #list1的内容追加在list后面</p>
-<h2 id="自动匹配序号并且输出values值（常用）"><a href="#自动匹配序号并且输出values值（常用）" class="headerlink" title="自动匹配序号并且输出values值（常用）"></a>自动匹配序号并且输出values值（常用）</h2><p>mylist= [“a”,”b”,”c”,”d”]</p>
-<p>for i,x in enumerate(mylist):<br>    print(i,x) </p>
-<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p>为了去重</p>
-<h2 id="全局变量-和-局部变量"><a href="#全局变量-和-局部变量" class="headerlink" title="全局变量 和 局部变量"></a>全局变量 和 局部变量</h2><h2 id="想在局部函数上更改全局变量需要在变量名上加global声明-以小影响大"><a href="#想在局部函数上更改全局变量需要在变量名上加global声明-以小影响大" class="headerlink" title="想在局部函数上更改全局变量需要在变量名上加global声明  以小影响大"></a>想在局部函数上更改全局变量需要在变量名上加global声明  以小影响大</h2>]]></content>
+    <title>Python(爬虫：获取数据)</title>
+    <url>/2022/02/18/Python(%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE)/</url>
+    <content><![CDATA[<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>age:<br>import urllib.request<br>import urllib.parse<br>def getData(baseurl):<br>    for i in range(0,10):<br>        url=baseurl+str(i*25)   #每页25个，循环10次则可以获取TOP250的数据<br>        html=askURL(url)        #保存每一页数据</p>
+<p>def askURL(url):<br>    head={“user-agent”:”Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36”}<br>    req=urllib.request.Request(url,headers=head)<br>    html = “”<br>    try:<br>        response=urllib.request.urlopen(req)<br>        page=response.read()<br>        html=page.decode(‘utf-8’)<br>                                        #print(page.decode(‘utf-8’))#打印<br>    except urllib.error.URLError as e:<br>        if hasattr(e,”code”):<br>            print(e.code)<br>        if hasattr(e,”reason”):<br>            print(e.reason)<br>    return html</p>
+<p>getData(“<a href="https://movie.douban.com/top250?start=&quot;">https://movie.douban.com/top250?start=&quot;</a>)</p>
+<hr>
+]]></content>
       <tags>
         <tag>学习</tag>
       </tags>
@@ -143,25 +126,18 @@ return datalist
       </tags>
   </entry>
   <entry>
-    <title>Python基础（文件操作、捕获异常）</title>
-    <url>/2022/02/17/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="Python代码文件操作"><a href="#Python代码文件操作" class="headerlink" title="Python代码文件操作"></a>Python代码文件操作</h2><p>f=open(“ddd.txt”,“w”)   </p>
-<p>访问权限为W， 如果在目录下没有该文件则创建，r为读取权限</p>
-<p>f.readline()<br>一次读一行<br>f.readlines()<br>全读，形成一个列表</p>
-<p>不常见操作<br>import os<br>os.rename(“ddd.txt”,”aaa.txt”)</p>
-<p>删除<br>os.remove(“ddd.txt”)<br>详细看文档</p>
+    <title>Python基础(元组、字典访问、字典合并、自动匹配序号、集合、全局变量局部变量)</title>
+    <url>/2022/02/15/Python%E5%9F%BA%E7%A1%80(%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8%E8%AE%BF%E9%97%AE%E3%80%81%E5%AD%97%E5%85%B8%E5%90%88%E5%B9%B6%E3%80%81%E8%87%AA%E5%8A%A8%E5%8C%B9%E9%85%8D%E5%BA%8F%E5%8F%B7%E3%80%81%E9%9B%86%E5%90%88%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F)/</url>
+    <content><![CDATA[<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>类型: tuple 元组<br>    : list  列表<br>当元组进行相加操作时，是重新创建一个新的元组来涵盖两个元组</p>
+<h2 id="字典访问"><a href="#字典访问" class="headerlink" title="字典访问"></a>字典访问</h2><p>增：chovy={“dd”:1,”ddd”:2}  chovy[“ID”]=what #直接用列表操作的[]符来确定键位并且直接赋值<br>删：del list[“key”]<br>清空： list.clear</p>
+<p>查：<br>print(info[“gender”])    #直接访问，会报错<br>print(info.get(“gender”) #使用get方法来找KEY  返回none   返回其他值用后加  info.get(“gender”,m) m为返回值</p>
+<p>list.keys()<br>list.values()<br>list.item()          #遍历所有的值</p>
+<p>tip：用for循环可以直接将里面的东西抽出来，包括元组，列表，字典<br>age: for key,value in info.item():<br>    print(“key=%s,value=%s”%(key,value))  强大功能  带多个元素也可以直接抽取</p>
 <hr>
-<h2 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h2><p>try:<br>    print(“—–test—–1—-“)<br>    f= open(“123.txt”,”r”)<br>    print(“—————-test ——2—-“)<br>except IOError:    # 文件没找到，属于IO异常（输入输出异常）<br>     pass               # 捕获异常后，执行的代码</p>
-<p>#异常想要被捕获，异常类型要匹配（想要知道是什么错误类型）在后面加as result可以打印错误<br>#统一的错误捕获：Exception</p>
-<hr>
-<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><p>1.应用文件操作的相关知识，通过Python新建一个文件gushi.txt，选择一首古诗写入文件中<br>2.另外写一个函数，读取指定文件gushi.txt,将内容复制到copy.txt中，并在控制台输出”复制完毕”<br>3:提示：分别定义两个函数，完成读文件和写文件的操作<br>    尽可能完善代码，添加异常处理</p>
-<p>代码如下：<br>def write(name,content):<br>    try:<br>        f=open(name,”w”)<br>        f.write(content)<br>        f.close()<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)</p>
-<p>write(“gushi.txt”,”阅尽天涯离别苦，不道归来，零落花如许。\n花底相看无一语，绿窗春与天俱暮。\n待把相思灯下诉，一缕新欢，旧恨千千缕。\n最是人间留不住，朱颜辞镜花辞树。”)</p>
-<p>def read(name):<br>    try:<br>        f=open(name,”r”)<br>        content=f.readlines()<br>        for temp in content:<br>            print(temp,end=’’)<br>        f.close()<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)<br>read(“gushi.txt”)</p>
-<p>def copy(Fomename,Toname):<br>    try:<br>        F=open(Fomename,”r”)<br>        content=F.readlines()<br>        T=open(Toname,”w”)<br>        for temp in content:<br>            T.write(temp)<br>        F.close()<br>        T.close()<br>        print(“复制成功！”)<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)</p>
-<p>copy(“gushi.txt”,”copy.txt”)</p>
-<hr>
-]]></content>
+<h3 id="两字典合并"><a href="#两字典合并" class="headerlink" title="两字典合并"></a>两字典合并</h3><p>list.update(list1) #list1的内容追加在list后面</p>
+<p>自动匹配序号并且输出values值（常用）<br>mylist= [“a”,”b”,”c”,”d”]</p>
+<p>for i,x in enumerate(mylist):<br>    print(i,x) </p>
+<h2 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h2><h2 id="想在局部函数上更改全局变量需要在变量名上加global声明-以小影响大"><a href="#想在局部函数上更改全局变量需要在变量名上加global声明-以小影响大" class="headerlink" title="想在局部函数上更改全局变量需要在变量名上加global声明  以小影响大"></a>想在局部函数上更改全局变量需要在变量名上加global声明  以小影响大</h2>]]></content>
       <tags>
         <tag>学习</tag>
       </tags>
@@ -216,6 +192,30 @@ return datalist
       </tags>
   </entry>
   <entry>
+    <title>Python基础（文件操作、捕获异常）</title>
+    <url>/2022/02/17/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="Python代码文件操作"><a href="#Python代码文件操作" class="headerlink" title="Python代码文件操作"></a>Python代码文件操作</h2><p>f=open(“ddd.txt”,“w”)   </p>
+<p>访问权限为W， 如果在目录下没有该文件则创建，r为读取权限</p>
+<p>f.readline()<br>一次读一行<br>f.readlines()<br>全读，形成一个列表</p>
+<p>不常见操作<br>import os<br>os.rename(“ddd.txt”,”aaa.txt”)</p>
+<p>删除<br>os.remove(“ddd.txt”)<br>详细看文档</p>
+<hr>
+<h2 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h2><p>try:<br>    print(“—–test—–1—-“)<br>    f= open(“123.txt”,”r”)<br>    print(“—————-test ——2—-“)<br>except IOError:    # 文件没找到，属于IO异常（输入输出异常）<br>     pass               # 捕获异常后，执行的代码</p>
+<p>#异常想要被捕获，异常类型要匹配（想要知道是什么错误类型）在后面加as result可以打印错误<br>#统一的错误捕获：Exception</p>
+<hr>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><p>1.应用文件操作的相关知识，通过Python新建一个文件gushi.txt，选择一首古诗写入文件中<br>2.另外写一个函数，读取指定文件gushi.txt,将内容复制到copy.txt中，并在控制台输出”复制完毕”<br>3:提示：分别定义两个函数，完成读文件和写文件的操作<br>    尽可能完善代码，添加异常处理</p>
+<p>代码如下：<br>def write(name,content):<br>    try:<br>        f=open(name,”w”)<br>        f.write(content)<br>        f.close()<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)</p>
+<p>write(“gushi.txt”,”阅尽天涯离别苦，不道归来，零落花如许。\n花底相看无一语，绿窗春与天俱暮。\n待把相思灯下诉，一缕新欢，旧恨千千缕。\n最是人间留不住，朱颜辞镜花辞树。”)</p>
+<p>def read(name):<br>    try:<br>        f=open(name,”r”)<br>        content=f.readlines()<br>        for temp in content:<br>            print(temp,end=’’)<br>        f.close()<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)<br>read(“gushi.txt”)</p>
+<p>def copy(Fomename,Toname):<br>    try:<br>        F=open(Fomename,”r”)<br>        content=F.readlines()<br>        T=open(Toname,”w”)<br>        for temp in content:<br>            T.write(temp)<br>        F.close()<br>        T.close()<br>        print(“复制成功！”)<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)</p>
+<p>copy(“gushi.txt”,”copy.txt”)</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Tableau练习demo</title>
     <url>/2022/01/08/Tableau%E7%BB%83%E4%B9%A0%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<h2 id="Tableau安装"><a href="#Tableau安装" class="headerlink" title="Tableau安装"></a>Tableau安装</h2><p>官网下载64位，学生认证注册激活(还好及时注册，不然毕业就没免费试用了^ _ ^)。</p>
@@ -223,6 +223,42 @@ return datalist
 <h2 id="数据可视化原理"><a href="#数据可视化原理" class="headerlink" title="数据可视化原理"></a>数据可视化原理</h2><p>维度、度量</p>
 <h2 id="基础图表制作"><a href="#基础图表制作" class="headerlink" title="基础图表制作"></a>基础图表制作</h2><p>百分之90多的数据可视化都可以用折线图、柱状图、散点图、饼图（被誉为四大金刚）</p>
 <h2 id="BI仪表盘搭建"><a href="#BI仪表盘搭建" class="headerlink" title="BI仪表盘搭建"></a>BI仪表盘搭建</h2><p>(直接上图！！)<br><img src="/imgg/demo1.png" alt="Tableau"><br><img src="/imgg/demo2.png" alt="Tableau"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python连接云端数据库</title>
+    <url>/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h2 id="云端数据库"><a href="#云端数据库" class="headerlink" title="云端数据库"></a>云端数据库</h2><p>我在阿里云上创建了一个云端的数据库，所以首先将获取下来的数据保存在excel.xls文件中，<br>在DataGrip软件（一款数据库软件）中点击获取数据源，添加云端数据库的服务器主机地址。还有一个就是需要mysql的驱动程序，程序需自己下载并导入。<br>主机地址填入操作如以下图：<br><img src="/imgg/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5.png" alt="DataGrip"></p>
+<h2 id="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"><a href="#Python上操作数据库（可进行数据库操作、重要筛选内容导出）" class="headerlink" title="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"></a>Python上操作数据库（可进行数据库操作、重要筛选内容导出）</h2><p>import pymysql</p>
+<p>con=pymysql.connect(<br>    host=’数据库服务器主机地址’,<br>    user=’服务器账号’,<br>    password=’账号密码’,<br>    db=’数据库名字’,<br>    port=端口号,<br>    charset=’utf8’<br>    )</p>
+<p>cur=con.cursor()</p>
+<p>sql=’select 概况 from 豆瓣电影top250’<br>cur.execute(sql)</p>
+<p>data=cur.fetchall()  #查看表里所有数据（sql查询中的所有数据）</p>
+<p>with open(“shujuku.txt”, “w”, encoding=”utf-8”) as fout:  #创建txt文件来保存<br>      for temp in data:<br>          temp=str(temp)<br>          fout.write(temp + “\n”)</p>
+<p>con.close()<br>cur.close()</p>
+<h2 id="Excel的文件保存数据架构"><a href="#Excel的文件保存数据架构" class="headerlink" title="Excel的文件保存数据架构"></a>Excel的文件保存数据架构</h2><p>#九九乘法表导入到excel.<br>for i in range(0,10):<br>    for k in range(1,i+1):<br>        print(“{}<em>{}={}\t”.format(k,i,i</em>k),end=””)<br>    print()</p>
+<p>import xlwt<br>workbook = xlwt.Workbook(encoding=”utf-8”)  #创建workbook对象<br>worksheet=workbook.add_sheet(‘sheet1’)      #创建工作表</p>
+<p>for i in range(0,10):<br>    for k in range(1,i+1):<br>        worksheet.write(i-1,k-1,”{}<em>{}={}\t”.format(k,i,i</em>k))<br>                                          #在表一中（0,0）格在写入hello</p>
+<p>workbook.save(‘student.xls’)                #保存数据表</p>
+<h2 id="re库的小积累（no重点）"><a href="#re库的小积累（no重点）" class="headerlink" title="re库的小积累（no重点）"></a>re库的小积累（no重点）</h2><p>#正则表达式：字符串模式 （判断字符串符合一定的标准）</p>
+<p>import re<br>#创建模式对象<br>pat =re.compile(“AA”) #此处的AA是正则表达式，去验证其他的字符串<br>#m = pat.search(“CBA”)  # search字符串被校验的内容<br>#m = pat.search(“ABCAA”)<br>#m = pat.search(“AABCAADDCCAAA”) #search方法，进行比对查找<br>#没有模式对象<br>#m=re.search(“asd”,”Aasd”)<br>#print(m)<br>#print(re.findall(“a”, “ASDaDFGAa”))  #前面是正则表达式，后偶是被校验的字符串<br>#print(re.findall(“[A-Z]”,”ASDaDFGAa”))<br>#print(re.findall(“[A-Z]+”,”ASDaDFGAa”))</p>
+<p>#sub<br>print(re.sub(“a”, “A”, “abcdcasd”))  #在第三个字符串中把a全部替换为A</p>
+<p>#建议在正则表达式中，在被比较的字符串前面加上r，不用担心转义字符的问题</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Kubernetes架构</title>
+    <url>/2022/01/03/kubernetes%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="Kubernetes架构"><a href="#Kubernetes架构" class="headerlink" title="Kubernetes架构"></a>Kubernetes架构</h2><p>Kubernetes的核心特点就是那个Pod概念，<br>我们将Pod比喻成一个瓶子的瓶塞<br>将里面的容器container比喻成一种种成分<br>一个node中可以有多个Pod，Pod之间能实现交互。<br>Pod就像API一样，实现服务入口交接功能。</p>
+<p><img src="/imgg/Kubernetes%E6%9E%B6%E6%9E%84.png" alt="Xmind"></p>
 <hr>
 ]]></content>
       <tags>
@@ -249,17 +285,6 @@ return datalist
 <p>L1.sort()升序排序.</p>
 <p>三元表达式where<br>练习：<br>小练习《打标签》<br>现在你有一列数据，内容是接下来周1到周5的室外气温<br>你想要新增一列数据，根据气温，决定中午去吃饭是走室外还是走地下室<br>若室温&gt;28℃，则走地下室;若室温&lt;=28℃，则走室外</p>
 <p>先对周几进行数组创建并排序。tempre = np.array([28,31,30,25,26])<br>                        choice=np.where(tempre&gt;28,’走地下室’,’走室外’)<br>                        print(tempre)<br>                        print(choice)<br>                        输出相对应的行为</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Kubernetes架构</title>
-    <url>/2022/01/03/kubernetes%E6%9E%B6%E6%9E%84/</url>
-    <content><![CDATA[<h2 id="Kubernetes架构"><a href="#Kubernetes架构" class="headerlink" title="Kubernetes架构"></a>Kubernetes架构</h2><p>Kubernetes的核心特点就是那个Pod概念，<br>我们将Pod比喻成一个瓶子的瓶塞<br>将里面的容器container比喻成一种种成分<br>一个node中可以有多个Pod，Pod之间能实现交互。<br>Pod就像API一样，实现服务入口交接功能。</p>
-<p><img src="/imgg/Kubernetes%E6%9E%B6%E6%9E%84.png" alt="Xmind"></p>
 <hr>
 ]]></content>
       <tags>
@@ -318,31 +343,6 @@ return datalist
     <url>/2021/12/18/%E8%81%8A%E8%81%8A%E6%88%91%E4%BB%AC%E7%9A%84%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86/</url>
     <content><![CDATA[<h2 id="可爱的贝叶斯定理"><a href="#可爱的贝叶斯定理" class="headerlink" title="可爱的贝叶斯定理"></a>可爱的贝叶斯定理</h2><p>我们知道伯努利事件，它都是每个独立的事件组成。<br>贝叶斯定理则是在伯努利事件的基础上进行对某些事件的概率确定。</p>
 <p>简单的如图所示，只能用最蠢的方式去做这种题。^ - ^<br><img src="/imgg/%E6%A6%82%E7%8E%87%E9%A2%98%E7%9B%AE.png" alt="题目"><br><img src="/imgg/%E9%A2%98%E7%9B%AE%E7%AD%94%E6%A1%88.jpg" alt="题目答案"></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python连接云端数据库</title>
-    <url>/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<h2 id="云端数据库"><a href="#云端数据库" class="headerlink" title="云端数据库"></a>云端数据库</h2><p>我在阿里云上创建了一个云端的数据库，所以首先将获取下来的数据保存在excel.xls文件中，<br>在DataGrip软件（一款数据库软件）中点击获取数据源，添加云端数据库的服务器主机地址。还有一个就是需要mysql的驱动程序，程序需自己下载并导入。<br>主机地址填入操作如以下图：<br><img src="/imgg/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5.png" alt="DataGrip"></p>
-<h2 id="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"><a href="#Python上操作数据库（可进行数据库操作、重要筛选内容导出）" class="headerlink" title="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"></a>Python上操作数据库（可进行数据库操作、重要筛选内容导出）</h2><p>import pymysql</p>
-<p>con=pymysql.connect(<br>    host=’数据库服务器主机地址’,<br>    user=’服务器账号’,<br>    password=’账号密码’,<br>    db=’数据库名字’,<br>    port=端口号,<br>    charset=’utf8’<br>    )</p>
-<p>cur=con.cursor()</p>
-<p>sql=’select 概况 from 豆瓣电影top250’<br>cur.execute(sql)</p>
-<p>data=cur.fetchall()  #查看表里所有数据（sql查询中的所有数据）</p>
-<p>with open(“shujuku.txt”, “w”, encoding=”utf-8”) as fout:  #创建txt文件来保存<br>      for temp in data:<br>          temp=str(temp)<br>          fout.write(temp + “\n”)</p>
-<p>con.close()<br>cur.close()</p>
-<h2 id="Excel的文件保存数据架构"><a href="#Excel的文件保存数据架构" class="headerlink" title="Excel的文件保存数据架构"></a>Excel的文件保存数据架构</h2><p>#九九乘法表导入到excel.<br>for i in range(0,10):<br>    for k in range(1,i+1):<br>        print(“{}<em>{}={}\t”.format(k,i,i</em>k),end=””)<br>    print()</p>
-<p>import xlwt<br>workbook = xlwt.Workbook(encoding=”utf-8”)  #创建workbook对象<br>worksheet=workbook.add_sheet(‘sheet1’)      #创建工作表</p>
-<p>for i in range(0,10):<br>    for k in range(1,i+1):<br>        worksheet.write(i-1,k-1,”{}<em>{}={}\t”.format(k,i,i</em>k))<br>                                          #在表一中（0,0）格在写入hello</p>
-<p>workbook.save(‘student.xls’)                #保存数据表</p>
-<h2 id="re库的小积累（no重点）"><a href="#re库的小积累（no重点）" class="headerlink" title="re库的小积累（no重点）"></a>re库的小积累（no重点）</h2><p>#正则表达式：字符串模式 （判断字符串符合一定的标准）</p>
-<p>import re<br>#创建模式对象<br>pat =re.compile(“AA”) #此处的AA是正则表达式，去验证其他的字符串<br>#m = pat.search(“CBA”)  # search字符串被校验的内容<br>#m = pat.search(“ABCAA”)<br>#m = pat.search(“AABCAADDCCAAA”) #search方法，进行比对查找<br>#没有模式对象<br>#m=re.search(“asd”,”Aasd”)<br>#print(m)<br>#print(re.findall(“a”, “ASDaDFGAa”))  #前面是正则表达式，后偶是被校验的字符串<br>#print(re.findall(“[A-Z]”,”ASDaDFGAa”))<br>#print(re.findall(“[A-Z]+”,”ASDaDFGAa”))</p>
-<p>#sub<br>print(re.sub(“a”, “A”, “abcdcasd”))  #在第三个字符串中把a全部替换为A</p>
-<p>#建议在正则表达式中，在被比较的字符串前面加上r，不用担心转义字符的问题</p>
 <hr>
 ]]></content>
       <tags>
