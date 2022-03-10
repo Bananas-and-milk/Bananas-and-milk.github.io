@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>如何用41万弹幕体现来自科技区稚晖君的魅力|情感分析&amp;LDA主题&amp;可视化 | Think on the shoulders of giants</title><meta name="keywords" content="学习"><meta name="author" content="Bananas-Wang"><meta name="copyright" content="Bananas-Wang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="灵感在早期的2021-10-7号时，稚晖君在网上发布了一条视频，是关于机械臂的视频，直接冲上热门，所以在今天回顾一下机械臂的魅力。 第一、想获取数据，基于python爬虫 硬爬这里我翻了无数篇blog，找了无数个法子来进行参考和调改。找到很多方法只能爬取几千条的，几百条的。都没法达到我心中的样本统计标准，所以一直寻找最优解。因为之前的爬虫已经失效了，B站它更改了API，所以，cookies必须要有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用41万弹幕体现来自科技区稚晖君的魅力|情感分析&amp;LDA主题&amp;可视化">
+<meta property="og:url" content="http://example.com/2022/03/08/python%E7%A8%9A%E6%99%96%E5%90%9B%E5%BC%B9%E5%B9%95%E5%88%86%E6%9E%90/index.html">
+<meta property="og:site_name" content="Think on the shoulders of giants">
+<meta property="og:description" content="灵感在早期的2021-10-7号时，稚晖君在网上发布了一条视频，是关于机械臂的视频，直接冲上热门，所以在今天回顾一下机械臂的魅力。 第一、想获取数据，基于python爬虫 硬爬这里我翻了无数篇blog，找了无数个法子来进行参考和调改。找到很多方法只能爬取几千条的，几百条的。都没法达到我心中的样本统计标准，所以一直寻找最优解。因为之前的爬虫已经失效了，B站它更改了API，所以，cookies必须要有">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picsum.photos/id/318/3264/2448">
+<meta property="article:published_time" content="2022-03-08T05:32:45.000Z">
+<meta property="article:modified_time" content="2022-03-10T11:37:25.226Z">
+<meta property="article:author" content="Bananas-Wang">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/id/318/3264/2448"><link rel="shortcut icon" href="/img/favicon1.png"><link rel="canonical" href="http://example.com/2022/03/08/python%E7%A8%9A%E6%99%96%E5%90%9B%E5%BC%B9%E5%B9%95%E5%88%86%E6%9E%90/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '如何用41万弹幕体现来自科技区稚晖君的魅力|情感分析&LDA主题&可视化',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-10 19:37:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://picsum.photos/id/318/3264/2448')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Think on the shoulders of giants</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">如何用41万弹幕体现来自科技区稚晖君的魅力|情感分析&amp;LDA主题&amp;可视化</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-08T05:32:45.000Z" title="发表于 2022-03-08 13:32:45">2022-03-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-10T11:37:25.226Z" title="更新于 2022-03-10 19:37:25">2022-03-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="如何用41万弹幕体现来自科技区稚晖君的魅力|情感分析&amp;LDA主题&amp;可视化"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="灵感"><a href="#灵感" class="headerlink" title="灵感"></a>灵感</h2><p>在早期的2021-10-7号时，稚晖君在网上发布了一条视频，是关于机械臂的视频，直接冲上热门，<br>所以在今天回顾一下机械臂的魅力。</p>
+<h2 id="第一、想获取数据，基于python爬虫-硬爬"><a href="#第一、想获取数据，基于python爬虫-硬爬" class="headerlink" title="第一、想获取数据，基于python爬虫 硬爬"></a>第一、想获取数据，基于python爬虫 硬爬</h2><p>这里我翻了无数篇blog，找了无数个法子来进行参考和调改。<br>找到很多方法只能爬取几千条的，几百条的。都没法达到我心中的样本统计标准，所以一直寻找最优解。<br>因为之前的爬虫已经失效了，B站它更改了API，所以，cookies必须要有，因为需要账号登录嘛。<br>最后的最后，方法总比困难多，某平台上找到了一个能爬取所有弹幕的方法。<br>这里我直接显示爬取的结果，至于代码不方便透露。转载和标明出处都可能侵权。（狗头保命）<br>这是在DataGrip软件上的图片，因为我将爬取出来的数据下载到了txt文件中，然后导入到DataGrip<br><img src="/imgg/danmu1.png" alt="danmu"><br>以为在B站显示的只有2万条弹幕，真只有2万，最终发现上当了。其实有41万条弹幕。<br><img src="/imgg/danmu2.png" alt="danmu"><br>爬取到的弹幕也是正确无误的，都是对稚晖君大佬作品的认同和赞叹。</p>
+<hr>
+<h2 id="第二、上Notebook来整理弹幕内容列表"><a href="#第二、上Notebook来整理弹幕内容列表" class="headerlink" title="第二、上Notebook来整理弹幕内容列表"></a>第二、上Notebook来整理弹幕内容列表</h2><p>通过库pymysql 来进行连接我的云端数据库，还有加入pandas库来对弹幕内容进行整理。<br><img src="/imgg/danmu3.png" alt="danmu"><br>使用info查看数据是否存在缺失值。虽然一眼就能看出就两列不复杂，由于一些统计建议，我们还是<br>先从大局上摸一摸这份数据的底。info和describe是在探索任何数据集之前必须要用到的。这里describe我加了include，让弹幕的统计分析也显示出来，如果不加上的话，只会显示数值型（sentiment）的统计结果。<br><img src="/imgg/danmu4.png" alt="danmu"><br>占领榜首的词语有点尴尬，奈何没文化，一句卧槽走天下。</p>
+<hr>
+<h2 id="第三、SnowNLP情感分析"><a href="#第三、SnowNLP情感分析" class="headerlink" title="第三、SnowNLP情感分析"></a>第三、SnowNLP情感分析</h2><p>这个是重头戏，因为SnowNLP情感分析能通过弹幕的语句来进行逐字分析，是否为积极还是消极两大方面，目前常见的情感极性分析方法主要是两种：基于情感词典的方法和基于机器学习的方法。主要运用Python的第三方库SnowNLP对弹幕内容进行情感分析，使用方法很简单，计算出的情感score表示语义积极的概率，越接近0情感表现越消极，越接近1情感表现越积极。<br>这里我参考了一些文献，会在最后附录标明出处。<br>首先，导入本次分析需要用到的库(报错的需要安装，安装这里我推荐国内西三方库的连接:pip install 包名 -i <a target="_blank" rel="noopener" href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a> –trusted-host pypi.douban.com)<br>我所有的python第三方库都是在cmd 中直接下载所对应的包名即可，从此至今都没有报错过。<br><img src="/imgg/danmu5.png" alt="danmu"><br>接下来对弹幕内容中的每个值都进行情感训练，用lambda进行操作<br><img src="/imgg/danmu6.png" alt="danmu"><br>这里我们能清楚的看到，话都是一些赞叹词，但是情感分析出的分数参差不齐，这可能是因为在SnowNLP中对于敬词并没有很好的划分，只从喜怒哀乐进行详细划分。那么源码已经很难修改，所以在这里我们对于敬词，还有一些没文化的词:”卧槽”,”牛逼”等算是中立分数，都大概在0.5分的范围。所以比较好区分。<br>接下来我们用seaborn（可视化图库，和matplotlib类似）来看一下整体的情感倾向。<br><img src="/imgg/danmu7.png" alt="danmu"><br>这是我直接Markdown来下 可能会与大家共同的想法和理解。这个图出现在电视剧，或者电商可能相相似度会比较高，中间部分一般都是保持中立和不参与评论的人。也是占人数较多的一部分。<br><img src="/imgg/danmu8.png" alt="danmu"></p>
+<hr>
+<h2 id="第四、基于gensim的LDA主题模型"><a href="#第四、基于gensim的LDA主题模型" class="headerlink" title="第四、基于gensim的LDA主题模型"></a>第四、基于gensim的LDA主题模型</h2><p>分析完弹幕情感倾向，我们更进一步，用gansim来对这份弹幕数据做一个主题分析。里面的设计的知识点和原理在这里不太深入提及，如果感兴趣，欢迎加我QQ929134860一同讨论。<br>大致理解是：将所有发言的字段进行分词处理，形成单独的元素，来进行统计。<br>万物不离其宗，有很多发言只是换了一套词而已，想表达的意思一样。所以对此进行分类。<br>本次数据集我分为两种，一种是吃瓜群众，分数在0.4~0.6之间的，另一种是非吃瓜群众，对发言有一定的自己了解的。<br><img src="/imgg/danmu9.png" alt="danmu"><br>看看吃瓜群众的占比。<br><img src="/imgg/danmu10.png" alt="danmu"><br>现在，我们对弹幕内容进行分词处理，因为，我们平时看的新闻标题，B站标题，各种网站都存在一个分类，在本blog中也有相关的分类，都不会是以一个句子的形式呈现。<br>因此，这里使用jieba.Icut()对弹幕内容进行分词操作。<br><img src="/imgg/danmu11.png" alt="danmu"><br>导入下载好的停用词库（需要加QQ我直接发给你）<br>并将停用词加载到一个列表当中。<br><img src="/imgg/danmu12.png" alt="danmu"><br>使用lambda ，将一些不重要的标点符号和语气词过滤掉，方便制作词云图。<br>这里我们举非吃瓜群众弹幕集来进行操作。<br><img src="/imgg/danmu13.png" alt="danmu"><br>然后，使用for循环，将分好的每一个词放到一个列表当中。<br><img src="/imgg/danmu14.png" alt="danmu"><br>紧接着，我们开始构建情感词典了，这里用到的是gensim里面的copora.Dictionary，得出来的pos_dict结果是一个惰性对象，因此需要[*pos_dict]将其展开才能看到结果<br><img src="/imgg/danmu15.png" alt="danmu"><br>得到情感词典后，构建训练用的语料库<br><img src="/imgg/danmu16.png" alt="danmu"><br>最后，使用LDA（文本主题） 模型进行训练（机器学习）<br><img src="/imgg/danmu17.png" alt="danmu"><br>print，LDA主题模型，非常good！<br><img src="/imgg/danmu18.png" alt="danmu"></p>
+<hr>
+<h2 id="第五、词云图绘制"><a href="#第五、词云图绘制" class="headerlink" title="第五、词云图绘制"></a>第五、词云图绘制</h2><p>情感分析和主题分析就结束了，开始我们的词云图。<br>词云图就是词，句子形式不可能在词云图里出现把。<br>首先我们进行一个jieba分词操作<br><img src="/imgg/danmu19.png" alt="danmu"><br>导入相关的库，用停用词cn_stopwords.txt文本过滤一下<br><img src="/imgg/danmu20.png" alt="danmu"><br>使用pdSeries 将过滤好的词转化成元组，然后valuecounts，得出弹幕词频，看看哪些词出现的最多，由此作为依赖绘制词云图，一个普普通通的词云就被我们绘制出来了。<br><img src="/imgg/danmu21.png" alt="danmu"><br>感觉有点丑，而且没什么特别之处，那么我为了美化词云图，用到一个叫stylecloud的库<br>首先，将文本转化为CSV格式，导入。<br><img src="/imgg/danmu22.png" alt="danmu"><br>导入stylecloud 和 from IPython.display import Image 这两个库，输入相关代码<br><img src="/imgg/danmu23.png" alt="danmu"><br>既然是机械臂的视频，就换成AI 机械感的图标把，这个在网址（<a target="_blank" rel="noopener" href="https://fontawesome.com/icons/user-graduate?s=solid%EF%BC%89%E6%89%BE%EF%BC%8C%E6%98%AF%E5%90%A6%E6%AF%94%E4%B8%8A%E9%9D%A2%E9%82%A3%E4%B8%AA%E9%AB%98%E7%BA%A7%E4%B8%80%E7%82%B9%5E">https://fontawesome.com/icons/user-graduate?s=solid）找，是否比上面那个高级一点^</a> - ^<br><img src="/imgg/danmu24.png" alt="danmu"><br>这个配色和形状用在这个就非常应景了，stylecloud支持不同的形状和很多专业设计师级别的配色方案，大家感兴趣的话，自行百度一下。</p>
+<hr>
+<p>附录：<br>参考文献：<br>1、Python实现《沉默的真相》3万+弹幕情感分析<br>2、情感分析及可视化方法在网络视频弹幕数据分析中的应用<br>3、公众号Alex树屋《何同学弹幕分析》</p>
+<hr>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a></div><div class="post_share"><div class="social-share" data-image="https://picsum.photos/id/318/3264/2448" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"><img class="next-cover" src="https://picsum.photos/id/789/6016/4016" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Python连接云端数据库</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/13/Mysql%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E8%A7%A3%E9%A2%98%E8%BF%87%E7%A8%8B/" title="SQL牛客网第十二题详细解答（错题笔记）"><img class="cover" src="https://picsum.photos/id/985/5325/3550" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-13</div><div class="title">SQL牛客网第十二题详细解答（错题笔记）</div></div></a></div><div><a href="/2022/01/10/MySql%E8%BF%90%E7%94%A8/" title="MySql窗口函数（解决排名问题）"><img class="cover" src="https://picsum.photos/id/828/3165/2374" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-10</div><div class="title">MySql窗口函数（解决排名问题）</div></div></a></div><div><a href="/2022/01/05/Excel%E5%BA%94%E7%94%A8/" title="Excel应用"><img class="cover" src="https://picsum.photos/id/867/4288/2848" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-05</div><div class="title">Excel应用</div></div></a></div><div><a href="/2022/02/15/Python(%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8%E8%AE%BF%E9%97%AE%E3%80%81%E5%AD%97%E5%85%B8%E5%90%88%E5%B9%B6%E3%80%81%E8%87%AA%E5%8A%A8%E5%8C%B9%E9%85%8D%E5%BA%8F%E5%8F%B7%E3%80%81%E9%9B%86%E5%90%88%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F)/" title="Python(元组、字典访问、字典合并、自动匹配序号、集合、全局变量局部变量)"><img class="cover" src="https://picsum.photos/id/220/3872/2416" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-15</div><div class="title">Python(元组、字典访问、字典合并、自动匹配序号、集合、全局变量局部变量)</div></div></a></div><div><a href="/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Python连接云端数据库"><img class="cover" src="https://picsum.photos/id/789/6016/4016" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-22</div><div class="title">Python连接云端数据库</div></div></a></div><div><a href="/2022/02/18/Python(%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE)/" title="Python(爬虫：获取数据)"><img class="cover" src="https://picsum.photos/id/883/3000/2000" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-18</div><div class="title">Python(爬虫：获取数据)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NTA5NC8zMTU2Mg=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Bananas-Wang</div><div class="author-info__description">老师你好！我是王同学</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Bananas-and-milk.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Bananas-and-milk" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:929134860@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://bananas-and-milk.github.io/" target="_blank" title="博客"><i class="fab fa-algolia"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">霓虹熄了，世界渐冷清。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%B5%E6%84%9F"><span class="toc-number">1.</span> <span class="toc-text">灵感</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E3%80%81%E6%83%B3%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%9F%BA%E4%BA%8Epython%E7%88%AC%E8%99%AB-%E7%A1%AC%E7%88%AC"><span class="toc-number">2.</span> <span class="toc-text">第一、想获取数据，基于python爬虫 硬爬</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E3%80%81%E4%B8%8ANotebook%E6%9D%A5%E6%95%B4%E7%90%86%E5%BC%B9%E5%B9%95%E5%86%85%E5%AE%B9%E5%88%97%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text">第二、上Notebook来整理弹幕内容列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E3%80%81SnowNLP%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90"><span class="toc-number">4.</span> <span class="toc-text">第三、SnowNLP情感分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E3%80%81%E5%9F%BA%E4%BA%8Egensim%E7%9A%84LDA%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">第四、基于gensim的LDA主题模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E3%80%81%E8%AF%8D%E4%BA%91%E5%9B%BE%E7%BB%98%E5%88%B6"><span class="toc-number">6.</span> <span class="toc-text">第五、词云图绘制</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/03/08/python%E7%A8%9A%E6%99%96%E5%90%9B%E5%BC%B9%E5%B9%95%E5%88%86%E6%9E%90/" title="如何用41万弹幕体现来自科技区稚晖君的魅力|情感分析&amp;LDA主题&amp;可视化"><img src="https://picsum.photos/id/318/3264/2448" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何用41万弹幕体现来自科技区稚晖君的魅力|情感分析&amp;LDA主题&amp;可视化"/></a><div class="content"><a class="title" href="/2022/03/08/python%E7%A8%9A%E6%99%96%E5%90%9B%E5%BC%B9%E5%B9%95%E5%88%86%E6%9E%90/" title="如何用41万弹幕体现来自科技区稚晖君的魅力|情感分析&amp;LDA主题&amp;可视化">如何用41万弹幕体现来自科技区稚晖君的魅力|情感分析&amp;LDA主题&amp;可视化</a><time datetime="2022-03-08T05:32:45.000Z" title="发表于 2022-03-08 13:32:45">2022-03-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Python连接云端数据库"><img src="https://picsum.photos/id/789/6016/4016" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python连接云端数据库"/></a><div class="content"><a class="title" href="/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Python连接云端数据库">Python连接云端数据库</a><time datetime="2022-02-22T10:48:45.000Z" title="发表于 2022-02-22 18:48:45">2022-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/19/Python(%E8%A7%A3%E6%9E%90%E6%95%B0%E6%8D%AE)/" title="Python(获取、解析、保存数据)"><img src="https://picsum.photos/id/318/3264/2448" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python(获取、解析、保存数据)"/></a><div class="content"><a class="title" href="/2022/02/19/Python(%E8%A7%A3%E6%9E%90%E6%95%B0%E6%8D%AE)/" title="Python(获取、解析、保存数据)">Python(获取、解析、保存数据)</a><time datetime="2022-02-19T01:25:11.000Z" title="发表于 2022-02-19 09:25:11">2022-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/18/Python(%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE)/" title="Python(爬虫：获取数据)"><img src="https://picsum.photos/id/883/3000/2000" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python(爬虫：获取数据)"/></a><div class="content"><a class="title" href="/2022/02/18/Python(%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE)/" title="Python(爬虫：获取数据)">Python(爬虫：获取数据)</a><time datetime="2022-02-18T02:03:10.000Z" title="发表于 2022-02-18 10:03:10">2022-02-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/18/Python%EF%BC%88%E7%88%AC%E8%99%AB%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%EF%BC%89/" title="Python(爬虫准备工作)"><img src="https://picsum.photos/id/885/4000/2667" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python(爬虫准备工作)"/></a><div class="content"><a class="title" href="/2022/02/18/Python%EF%BC%88%E7%88%AC%E8%99%AB%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%EF%BC%89/" title="Python(爬虫准备工作)">Python(爬虫准备工作)</a><time datetime="2022-02-18T01:55:10.000Z" title="发表于 2022-02-18 09:55:10">2022-02-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Bananas-Wang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">很高兴认识你。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-autoplay="true" data-id="7217555938" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="auto" data-loop="one" data-mutex="true" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

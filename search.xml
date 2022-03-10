@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SQL牛客网第十二题详细解答（错题笔记）</title>
+    <url>/2022/01/13/Mysql%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E8%A7%A3%E9%A2%98%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="MySQL牛客网第十二题详细解答"><a href="#MySQL牛客网第十二题详细解答" class="headerlink" title="MySQL牛客网第十二题详细解答"></a>MySQL牛客网第十二题详细解答</h1><p>本题需求的是查找每个部门薪水最高的员工<br>看似非常简单，实则确实简单<br>一错：有个坑是 group by聚合部门名后dept_no占了主列，那么员工名emp_no字段就不能出现在第一列上。但题目要求先查看员工名emp_no，所以想一步登天还需绕路。<br>二错：将聚合好的dept_no列和最高工资各放在where dept_no 和 salary 处<br>那么聚合好的dept_no能够完美的确定下来，但是salary不能，因为你的最高工资在不同部门上可能存在相同工资<br>比如：部门001的员工工资分别为10 和 10 部门002的员工工资也分别为 10 和 10<br>那么筛选最高工资的时候，虽然用聚合了dept_no ，但还是无法分别这些10都来自于谁，所以在最后出现了异值。</p>
+<p>解决方式：一错就在原基础上绕路，分别对dept_no和salary进行判定即可绕路<br>         二错使用where和并形式来聚合。我现在才知道where可以带两字段进行判断的。涨知识了。<br>问题：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98.png" alt="mysql"><br>解答：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98%E7%AD%94%E6%A1%88.png" alt="mysql"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySql窗口函数（解决排名问题）</title>
+    <url>/2022/01/10/MySql%E8%BF%90%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="简单的窗口函数运用"><a href="#简单的窗口函数运用" class="headerlink" title="简单的窗口函数运用"></a>简单的窗口函数运用</h2><p>排名窗口函数分三种: rank() over()        序列：  1  1  3  4  5 5 7….<br>           dense_rank() over()  序列:   1  1  2  3  4 4 5….<br>           row_number() over()  序列：  1  2  3  4  5 6 7….<br>偏移分析函数语法<br>            lag(字段名，偏移量,[默认值]) over()  向前偏移<br>            lead(字段名，偏移量,[默认值]) over() 相反</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Excel应用</title>
     <url>/2022/01/05/Excel%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<h2 id="sum、sumif、sumifs函数的使用"><a href="#sum、sumif、sumifs函数的使用" class="headerlink" title="sum、sumif、sumifs函数的使用"></a>sum、sumif、sumifs函数的使用</h2><p><img src="/imgg/Excelsumifs%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8.png" alt="ExcelPicture"></p>
@@ -16,42 +37,41 @@
       </tags>
   </entry>
   <entry>
-    <title>MySql窗口函数（解决排名问题）</title>
-    <url>/2022/01/10/MySql%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="简单的窗口函数运用"><a href="#简单的窗口函数运用" class="headerlink" title="简单的窗口函数运用"></a>简单的窗口函数运用</h2><p>排名窗口函数分三种: rank() over()        序列：  1  1  3  4  5 5 7….<br>           dense_rank() over()  序列:   1  1  2  3  4 4 5….<br>           row_number() over()  序列：  1  2  3  4  5 6 7….<br>偏移分析函数语法<br>            lag(字段名，偏移量,[默认值]) over()  向前偏移<br>            lead(字段名，偏移量,[默认值]) over() 相反</p>
+    <title>Python(元组、字典访问、字典合并、自动匹配序号、集合、全局变量局部变量)</title>
+    <url>/2022/02/15/Python(%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8%E8%AE%BF%E9%97%AE%E3%80%81%E5%AD%97%E5%85%B8%E5%90%88%E5%B9%B6%E3%80%81%E8%87%AA%E5%8A%A8%E5%8C%B9%E9%85%8D%E5%BA%8F%E5%8F%B7%E3%80%81%E9%9B%86%E5%90%88%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F)/</url>
+    <content><![CDATA[<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>类型: tuple 元组<br>    : list  列表<br>当元组进行相加操作时，是重新创建一个新的元组来涵盖两个元组</p>
+<h2 id="字典访问"><a href="#字典访问" class="headerlink" title="字典访问"></a>字典访问</h2><p>增：chovy={“dd”:1,”ddd”:2}  chovy[“ID”]=what #直接用列表操作的[]符来确定键位并且直接赋值<br>删：del list[“key”]<br>清空： list.clear</p>
+<p>查：<br>print(info[“gender”])    #直接访问，会报错<br>print(info.get(“gender”) #使用get方法来找KEY  返回none   返回其他值用后加  info.get(“gender”,m) m为返回值</p>
+<p>list.keys()<br>list.values()<br>list.item()          #遍历所有的值</p>
+<p>tip：用for循环可以直接将里面的东西抽出来，包括元组，列表，字典<br>age: for key,value in info.item():<br>    print(“key=%s,value=%s”%(key,value))  强大功能  带多个元素也可以直接抽取</p>
 <hr>
-]]></content>
+<h3 id="两字典合并"><a href="#两字典合并" class="headerlink" title="两字典合并"></a>两字典合并</h3><p>list.update(list1) #list1的内容追加在list后面</p>
+<p>自动匹配序号并且输出values值（常用）<br>mylist= [“a”,”b”,”c”,”d”]</p>
+<p>for i,x in enumerate(mylist):<br>    print(i,x) </p>
+<h2 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h2><h2 id="想在局部函数上更改全局变量需要在变量名上加global声明-以小影响大"><a href="#想在局部函数上更改全局变量需要在变量名上加global声明-以小影响大" class="headerlink" title="想在局部函数上更改全局变量需要在变量名上加global声明  以小影响大"></a>想在局部函数上更改全局变量需要在变量名上加global声明  以小影响大</h2>]]></content>
       <tags>
         <tag>学习</tag>
       </tags>
   </entry>
   <entry>
-    <title>SQL牛客网第十二题详细解答（错题笔记）</title>
-    <url>/2022/01/13/Mysql%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E8%A7%A3%E9%A2%98%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="MySQL牛客网第十二题详细解答"><a href="#MySQL牛客网第十二题详细解答" class="headerlink" title="MySQL牛客网第十二题详细解答"></a>MySQL牛客网第十二题详细解答</h1><p>本题需求的是查找每个部门薪水最高的员工<br>看似非常简单，实则确实简单<br>一错：有个坑是 group by聚合部门名后dept_no占了主列，那么员工名emp_no字段就不能出现在第一列上。但题目要求先查看员工名emp_no，所以想一步登天还需绕路。<br>二错：将聚合好的dept_no列和最高工资各放在where dept_no 和 salary 处<br>那么聚合好的dept_no能够完美的确定下来，但是salary不能，因为你的最高工资在不同部门上可能存在相同工资<br>比如：部门001的员工工资分别为10 和 10 部门002的员工工资也分别为 10 和 10<br>那么筛选最高工资的时候，虽然用聚合了dept_no ，但还是无法分别这些10都来自于谁，所以在最后出现了异值。</p>
-<p>解决方式：一错就在原基础上绕路，分别对dept_no和salary进行判定即可绕路<br>         二错使用where和并形式来聚合。我现在才知道where可以带两字段进行判断的。涨知识了。<br>问题：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98.png" alt="mysql"><br>解答：<br><img src="/imgg/sql%E5%8D%81%E4%BA%8C%E9%A2%98%E7%AD%94%E6%A1%88.png" alt="mysql"></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pandas基础</title>
-    <url>/2022/01/14/Pandas%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><p>首先学习的Pandas的数据预处理<br>本次学习我结合了SQL语言来进行缝合，用Python语言来效仿SQL语言</p>
-<h2 id="一、先加入模块包"><a href="#一、先加入模块包" class="headerlink" title="一、先加入模块包"></a>一、先加入模块包</h2><p>import numpy as np<br>import pandas as pd<br>import pymysql</p>
-<h3 id="1-1设置参数"><a href="#1-1设置参数" class="headerlink" title="1.1设置参数"></a>1.1设置参数</h3><p>pd.set_option(‘display.max_rows’,9999)<br>pd.set_option(‘display.max_columns’,9999)<br>pd.set_option(‘display.float_format’,lambda x: ‘%.3f’%x)</p>
-<h3 id="1-2加入文件"><a href="#1-2加入文件" class="headerlink" title="1.2加入文件"></a>1.2加入文件</h3><p>cpc = pd.read_csv(‘./cpc.csv’,sep=’,’,encoding=’gbk’) 本次加入的文件为csv格式</p>
-<h3 id="简单案例浏览"><a href="#简单案例浏览" class="headerlink" title="简单案例浏览"></a>简单案例浏览</h3><p><img src="/imgg/pandas%E7%AC%AC%E4%B8%80%E9%A2%98.png" alt="Pandas"></p>
-<p><img src="/imgg/pandas%E7%AC%AC%E4%BA%8C%E9%A2%98.png" alt="Pandas"></p>
-<p><img src="/imgg/pandas%E7%AC%AC%E4%B8%89%E9%A2%98.png" alt="Pandas"></p>
-<p><img src="/imgg/pandas%E7%AC%AC%E5%9B%9B%E9%A2%98.png" alt="Pandas"></p>
-<p><img src="/imgg/pandas%E7%AC%AC%E4%BA%94%E9%A2%98.png" alt="Pandas"></p>
-<p><img src="/imgg/pandas%E7%AC%AC%E5%85%AD%E9%A2%98.png" alt="Pandas"></p>
-<p><img src="/imgg/pandas%E7%AC%AC%E4%B8%83%E9%A2%98.png" alt="Pandas"></p>
-<p><img src="/imgg/pandas%E7%AC%AC%E5%85%AB%E9%A2%98.png" alt="Pandas"></p>
-<p><img src="/imgg/pandas%E7%AC%AC%E4%B9%9D%E9%A2%98.png" alt="Pandas"></p>
+    <title>Python连接云端数据库</title>
+    <url>/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h2 id="云端数据库"><a href="#云端数据库" class="headerlink" title="云端数据库"></a>云端数据库</h2><p>我在阿里云上创建了一个云端的数据库，所以首先将获取下来的数据保存在excel.xls文件中，<br>在DataGrip软件（一款数据库软件）中点击获取数据源，添加云端数据库的服务器主机地址。还有一个就是需要mysql的驱动程序，程序需自己下载并导入。<br>主机地址填入操作如以下图：<br><img src="/imgg/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5.png" alt="DataGrip"></p>
+<h2 id="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"><a href="#Python上操作数据库（可进行数据库操作、重要筛选内容导出）" class="headerlink" title="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"></a>Python上操作数据库（可进行数据库操作、重要筛选内容导出）</h2><p>import pymysql</p>
+<p>con=pymysql.connect(<br>    host=’数据库服务器主机地址’,<br>    user=’服务器账号’,<br>    password=’账号密码’,<br>    db=’数据库名字’,<br>    port=端口号,<br>    charset=’utf8’<br>    )</p>
+<p>cur=con.cursor()</p>
+<p>sql=’select 概况 from 豆瓣电影top250’<br>cur.execute(sql)</p>
+<p>data=cur.fetchall()  #查看表里所有数据（sql查询中的所有数据）</p>
+<p>with open(“shujuku.txt”, “w”, encoding=”utf-8”) as fout:  #创建txt文件来保存<br>      for temp in data:<br>          temp=str(temp)<br>          fout.write(temp + “\n”)</p>
+<p>con.close()<br>cur.close()</p>
+<h2 id="Excel的文件保存数据架构"><a href="#Excel的文件保存数据架构" class="headerlink" title="Excel的文件保存数据架构"></a>Excel的文件保存数据架构</h2><p>#九九乘法表导入到excel.<br>for i in range(0,10):<br>    for k in range(1,i+1):<br>        print(“{}<em>{}={}\t”.format(k,i,i</em>k),end=””)<br>    print()</p>
+<p>import xlwt<br>workbook = xlwt.Workbook(encoding=”utf-8”)  #创建workbook对象<br>worksheet=workbook.add_sheet(‘sheet1’)      #创建工作表</p>
+<p>for i in range(0,10):<br>    for k in range(1,i+1):<br>        worksheet.write(i-1,k-1,”{}<em>{}={}\t”.format(k,i,i</em>k))<br>                                          #在表一中（0,0）格在写入hello</p>
+<p>workbook.save(‘student.xls’)                #保存数据表</p>
+<h2 id="re库的小积累（no重点）"><a href="#re库的小积累（no重点）" class="headerlink" title="re库的小积累（no重点）"></a>re库的小积累（no重点）</h2><p>#正则表达式：字符串模式 （判断字符串符合一定的标准）</p>
+<p>import re<br>#创建模式对象<br>pat =re.compile(“AA”) #此处的AA是正则表达式，去验证其他的字符串<br>#m = pat.search(“CBA”)  # search字符串被校验的内容<br>#m = pat.search(“ABCAA”)<br>#m = pat.search(“AABCAADDCCAAA”) #search方法，进行比对查找<br>#没有模式对象<br>#m=re.search(“asd”,”Aasd”)<br>#print(m)<br>#print(re.findall(“a”, “ASDaDFGAa”))  #前面是正则表达式，后偶是被校验的字符串<br>#print(re.findall(“[A-Z]”,”ASDaDFGAa”))<br>#print(re.findall(“[A-Z]+”,”ASDaDFGAa”))</p>
+<p>#sub<br>print(re.sub(“a”, “A”, “abcdcasd”))  #在第三个字符串中把a全部替换为A</p>
+<p>#建议在正则表达式中，在被比较的字符串前面加上r，不用担心转义字符的问题</p>
 <hr>
 ]]></content>
       <tags>
@@ -126,18 +146,25 @@ return datalist
       </tags>
   </entry>
   <entry>
-    <title>Python基础(元组、字典访问、字典合并、自动匹配序号、集合、全局变量局部变量)</title>
-    <url>/2022/02/15/Python%E5%9F%BA%E7%A1%80(%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8%E8%AE%BF%E9%97%AE%E3%80%81%E5%AD%97%E5%85%B8%E5%90%88%E5%B9%B6%E3%80%81%E8%87%AA%E5%8A%A8%E5%8C%B9%E9%85%8D%E5%BA%8F%E5%8F%B7%E3%80%81%E9%9B%86%E5%90%88%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F)/</url>
-    <content><![CDATA[<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>类型: tuple 元组<br>    : list  列表<br>当元组进行相加操作时，是重新创建一个新的元组来涵盖两个元组</p>
-<h2 id="字典访问"><a href="#字典访问" class="headerlink" title="字典访问"></a>字典访问</h2><p>增：chovy={“dd”:1,”ddd”:2}  chovy[“ID”]=what #直接用列表操作的[]符来确定键位并且直接赋值<br>删：del list[“key”]<br>清空： list.clear</p>
-<p>查：<br>print(info[“gender”])    #直接访问，会报错<br>print(info.get(“gender”) #使用get方法来找KEY  返回none   返回其他值用后加  info.get(“gender”,m) m为返回值</p>
-<p>list.keys()<br>list.values()<br>list.item()          #遍历所有的值</p>
-<p>tip：用for循环可以直接将里面的东西抽出来，包括元组，列表，字典<br>age: for key,value in info.item():<br>    print(“key=%s,value=%s”%(key,value))  强大功能  带多个元素也可以直接抽取</p>
+    <title>Python基础（文件操作、捕获异常）</title>
+    <url>/2022/02/17/Python%EF%BC%88%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="Python代码文件操作"><a href="#Python代码文件操作" class="headerlink" title="Python代码文件操作"></a>Python代码文件操作</h2><p>f=open(“ddd.txt”,“w”)   </p>
+<p>访问权限为W， 如果在目录下没有该文件则创建，r为读取权限</p>
+<p>f.readline()<br>一次读一行<br>f.readlines()<br>全读，形成一个列表</p>
+<p>不常见操作<br>import os<br>os.rename(“ddd.txt”,”aaa.txt”)</p>
+<p>删除<br>os.remove(“ddd.txt”)<br>详细看文档</p>
 <hr>
-<h3 id="两字典合并"><a href="#两字典合并" class="headerlink" title="两字典合并"></a>两字典合并</h3><p>list.update(list1) #list1的内容追加在list后面</p>
-<p>自动匹配序号并且输出values值（常用）<br>mylist= [“a”,”b”,”c”,”d”]</p>
-<p>for i,x in enumerate(mylist):<br>    print(i,x) </p>
-<h2 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h2><h2 id="想在局部函数上更改全局变量需要在变量名上加global声明-以小影响大"><a href="#想在局部函数上更改全局变量需要在变量名上加global声明-以小影响大" class="headerlink" title="想在局部函数上更改全局变量需要在变量名上加global声明  以小影响大"></a>想在局部函数上更改全局变量需要在变量名上加global声明  以小影响大</h2>]]></content>
+<h2 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h2><p>try:<br>    print(“—–test—–1—-“)<br>    f= open(“123.txt”,”r”)<br>    print(“—————-test ——2—-“)<br>except IOError:    # 文件没找到，属于IO异常（输入输出异常）<br>     pass               # 捕获异常后，执行的代码</p>
+<p>#异常想要被捕获，异常类型要匹配（想要知道是什么错误类型）在后面加as result可以打印错误<br>#统一的错误捕获：Exception</p>
+<hr>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><p>1.应用文件操作的相关知识，通过Python新建一个文件gushi.txt，选择一首古诗写入文件中<br>2.另外写一个函数，读取指定文件gushi.txt,将内容复制到copy.txt中，并在控制台输出”复制完毕”<br>3:提示：分别定义两个函数，完成读文件和写文件的操作<br>    尽可能完善代码，添加异常处理</p>
+<p>代码如下：<br>def write(name,content):<br>    try:<br>        f=open(name,”w”)<br>        f.write(content)<br>        f.close()<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)</p>
+<p>write(“gushi.txt”,”阅尽天涯离别苦，不道归来，零落花如许。\n花底相看无一语，绿窗春与天俱暮。\n待把相思灯下诉，一缕新欢，旧恨千千缕。\n最是人间留不住，朱颜辞镜花辞树。”)</p>
+<p>def read(name):<br>    try:<br>        f=open(name,”r”)<br>        content=f.readlines()<br>        for temp in content:<br>            print(temp,end=’’)<br>        f.close()<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)<br>read(“gushi.txt”)</p>
+<p>def copy(Fomename,Toname):<br>    try:<br>        F=open(Fomename,”r”)<br>        content=F.readlines()<br>        T=open(Toname,”w”)<br>        for temp in content:<br>            T.write(temp)<br>        F.close()<br>        T.close()<br>        print(“复制成功！”)<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)</p>
+<p>copy(“gushi.txt”,”copy.txt”)</p>
+<hr>
+]]></content>
       <tags>
         <tag>学习</tag>
       </tags>
@@ -177,14 +204,14 @@ return datalist
       </tags>
   </entry>
   <entry>
-    <title>Tableau作品1</title>
+    <title>Tableau作品(对数据时代产业岗位初步调研)</title>
     <url>/2022/01/10/Tableau%E4%B8%8A%E6%89%8B%E5%88%B6%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="数据灵感来源"><a href="#数据灵感来源" class="headerlink" title="数据灵感来源"></a>数据灵感来源</h2><p>大数据时代，人们对数据的认识高度以及了解深度已经到达了一定重视，众多公司对数据人才的需求越是愈发激烈。<br>本次调研就来看看是否存在真实性</p>
 <h2 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h2><p>某网站上分享的有关数据产业招聘岗位汇总。</p>
 <h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><p><img src="/imgg/Tableau%E4%BD%9C%E5%93%811.png" alt="Tableau"><br><img src="/imgg/Tableau%E4%BD%9C%E5%93%812.png" alt="Tableau"></p>
 <h2 id="数据分析-个人观点"><a href="#数据分析-个人观点" class="headerlink" title="数据分析(个人观点)"></a>数据分析(个人观点)</h2><p>专门针对数据产业上人数最多的      北京        地区进行分析<br><img src="/imgg/Tableau%E4%BD%9C%E5%93%811%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%A7%82%E7%82%B9.png" alt="Xmind"></p>
 <hr>
-<h1 id="调研总结"><a href="#调研总结" class="headerlink" title="调研总结"></a>调研总结</h1><p>1、数据产业确实掀起了一大波风潮，很多公司都对数据岗位的需求也确实激烈（激烈在于数据岗位的种类，薪资等方面），特别是北京地区。<br>2、数据产业都需要一些经验丰厚的职场人才能完全胜任，年轻人可不容易。</p>
+<h1 id="调研总结"><a href="#调研总结" class="headerlink" title="调研总结"></a>调研总结</h1><p>1、数据产业确实掀起了一大波风潮，很多公司都对数据岗位的需求也确实激烈（激烈在于数据岗位的种类，薪资等方面），特别是北京地区。<br>2、数据产业都需要一些经验丰厚的职场人才能完全胜任，年轻人需要很多的努力才能追上。</p>
 <hr>
 ]]></content>
       <tags>
@@ -192,81 +219,7 @@ return datalist
       </tags>
   </entry>
   <entry>
-    <title>Python基础（文件操作、捕获异常）</title>
-    <url>/2022/02/17/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="Python代码文件操作"><a href="#Python代码文件操作" class="headerlink" title="Python代码文件操作"></a>Python代码文件操作</h2><p>f=open(“ddd.txt”,“w”)   </p>
-<p>访问权限为W， 如果在目录下没有该文件则创建，r为读取权限</p>
-<p>f.readline()<br>一次读一行<br>f.readlines()<br>全读，形成一个列表</p>
-<p>不常见操作<br>import os<br>os.rename(“ddd.txt”,”aaa.txt”)</p>
-<p>删除<br>os.remove(“ddd.txt”)<br>详细看文档</p>
-<hr>
-<h2 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h2><p>try:<br>    print(“—–test—–1—-“)<br>    f= open(“123.txt”,”r”)<br>    print(“—————-test ——2—-“)<br>except IOError:    # 文件没找到，属于IO异常（输入输出异常）<br>     pass               # 捕获异常后，执行的代码</p>
-<p>#异常想要被捕获，异常类型要匹配（想要知道是什么错误类型）在后面加as result可以打印错误<br>#统一的错误捕获：Exception</p>
-<hr>
-<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><p>1.应用文件操作的相关知识，通过Python新建一个文件gushi.txt，选择一首古诗写入文件中<br>2.另外写一个函数，读取指定文件gushi.txt,将内容复制到copy.txt中，并在控制台输出”复制完毕”<br>3:提示：分别定义两个函数，完成读文件和写文件的操作<br>    尽可能完善代码，添加异常处理</p>
-<p>代码如下：<br>def write(name,content):<br>    try:<br>        f=open(name,”w”)<br>        f.write(content)<br>        f.close()<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)</p>
-<p>write(“gushi.txt”,”阅尽天涯离别苦，不道归来，零落花如许。\n花底相看无一语，绿窗春与天俱暮。\n待把相思灯下诉，一缕新欢，旧恨千千缕。\n最是人间留不住，朱颜辞镜花辞树。”)</p>
-<p>def read(name):<br>    try:<br>        f=open(name,”r”)<br>        content=f.readlines()<br>        for temp in content:<br>            print(temp,end=’’)<br>        f.close()<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)<br>read(“gushi.txt”)</p>
-<p>def copy(Fomename,Toname):<br>    try:<br>        F=open(Fomename,”r”)<br>        content=F.readlines()<br>        T=open(Toname,”w”)<br>        for temp in content:<br>            T.write(temp)<br>        F.close()<br>        T.close()<br>        print(“复制成功！”)<br>    except Exception as result:<br>        print(“文件读取出错，出错内容为”,result)</p>
-<p>copy(“gushi.txt”,”copy.txt”)</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tableau练习demo</title>
-    <url>/2022/01/08/Tableau%E7%BB%83%E4%B9%A0%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<h2 id="Tableau安装"><a href="#Tableau安装" class="headerlink" title="Tableau安装"></a>Tableau安装</h2><p>官网下载64位，学生认证注册激活(还好及时注册，不然毕业就没免费试用了^ _ ^)。</p>
-<h2 id="数据连接"><a href="#数据连接" class="headerlink" title="数据连接"></a>数据连接</h2><p>Excel的CSV文件直接用文本文件进行打开和连接。</p>
-<h2 id="数据可视化原理"><a href="#数据可视化原理" class="headerlink" title="数据可视化原理"></a>数据可视化原理</h2><p>维度、度量</p>
-<h2 id="基础图表制作"><a href="#基础图表制作" class="headerlink" title="基础图表制作"></a>基础图表制作</h2><p>百分之90多的数据可视化都可以用折线图、柱状图、散点图、饼图（被誉为四大金刚）</p>
-<h2 id="BI仪表盘搭建"><a href="#BI仪表盘搭建" class="headerlink" title="BI仪表盘搭建"></a>BI仪表盘搭建</h2><p>(直接上图！！)<br><img src="/imgg/demo1.png" alt="Tableau"><br><img src="/imgg/demo2.png" alt="Tableau"></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python连接云端数据库</title>
-    <url>/2022/02/22/Python%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<h2 id="云端数据库"><a href="#云端数据库" class="headerlink" title="云端数据库"></a>云端数据库</h2><p>我在阿里云上创建了一个云端的数据库，所以首先将获取下来的数据保存在excel.xls文件中，<br>在DataGrip软件（一款数据库软件）中点击获取数据源，添加云端数据库的服务器主机地址。还有一个就是需要mysql的驱动程序，程序需自己下载并导入。<br>主机地址填入操作如以下图：<br><img src="/imgg/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5.png" alt="DataGrip"></p>
-<h2 id="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"><a href="#Python上操作数据库（可进行数据库操作、重要筛选内容导出）" class="headerlink" title="Python上操作数据库（可进行数据库操作、重要筛选内容导出）"></a>Python上操作数据库（可进行数据库操作、重要筛选内容导出）</h2><p>import pymysql</p>
-<p>con=pymysql.connect(<br>    host=’数据库服务器主机地址’,<br>    user=’服务器账号’,<br>    password=’账号密码’,<br>    db=’数据库名字’,<br>    port=端口号,<br>    charset=’utf8’<br>    )</p>
-<p>cur=con.cursor()</p>
-<p>sql=’select 概况 from 豆瓣电影top250’<br>cur.execute(sql)</p>
-<p>data=cur.fetchall()  #查看表里所有数据（sql查询中的所有数据）</p>
-<p>with open(“shujuku.txt”, “w”, encoding=”utf-8”) as fout:  #创建txt文件来保存<br>      for temp in data:<br>          temp=str(temp)<br>          fout.write(temp + “\n”)</p>
-<p>con.close()<br>cur.close()</p>
-<h2 id="Excel的文件保存数据架构"><a href="#Excel的文件保存数据架构" class="headerlink" title="Excel的文件保存数据架构"></a>Excel的文件保存数据架构</h2><p>#九九乘法表导入到excel.<br>for i in range(0,10):<br>    for k in range(1,i+1):<br>        print(“{}<em>{}={}\t”.format(k,i,i</em>k),end=””)<br>    print()</p>
-<p>import xlwt<br>workbook = xlwt.Workbook(encoding=”utf-8”)  #创建workbook对象<br>worksheet=workbook.add_sheet(‘sheet1’)      #创建工作表</p>
-<p>for i in range(0,10):<br>    for k in range(1,i+1):<br>        worksheet.write(i-1,k-1,”{}<em>{}={}\t”.format(k,i,i</em>k))<br>                                          #在表一中（0,0）格在写入hello</p>
-<p>workbook.save(‘student.xls’)                #保存数据表</p>
-<h2 id="re库的小积累（no重点）"><a href="#re库的小积累（no重点）" class="headerlink" title="re库的小积累（no重点）"></a>re库的小积累（no重点）</h2><p>#正则表达式：字符串模式 （判断字符串符合一定的标准）</p>
-<p>import re<br>#创建模式对象<br>pat =re.compile(“AA”) #此处的AA是正则表达式，去验证其他的字符串<br>#m = pat.search(“CBA”)  # search字符串被校验的内容<br>#m = pat.search(“ABCAA”)<br>#m = pat.search(“AABCAADDCCAAA”) #search方法，进行比对查找<br>#没有模式对象<br>#m=re.search(“asd”,”Aasd”)<br>#print(m)<br>#print(re.findall(“a”, “ASDaDFGAa”))  #前面是正则表达式，后偶是被校验的字符串<br>#print(re.findall(“[A-Z]”,”ASDaDFGAa”))<br>#print(re.findall(“[A-Z]+”,”ASDaDFGAa”))</p>
-<p>#sub<br>print(re.sub(“a”, “A”, “abcdcasd”))  #在第三个字符串中把a全部替换为A</p>
-<p>#建议在正则表达式中，在被比较的字符串前面加上r，不用担心转义字符的问题</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Kubernetes架构</title>
-    <url>/2022/01/03/kubernetes%E6%9E%B6%E6%9E%84/</url>
-    <content><![CDATA[<h2 id="Kubernetes架构"><a href="#Kubernetes架构" class="headerlink" title="Kubernetes架构"></a>Kubernetes架构</h2><p>Kubernetes的核心特点就是那个Pod概念，<br>我们将Pod比喻成一个瓶子的瓶塞<br>将里面的容器container比喻成一种种成分<br>一个node中可以有多个Pod，Pod之间能实现交互。<br>Pod就像API一样，实现服务入口交接功能。</p>
-<p><img src="/imgg/Kubernetes%E6%9E%B6%E6%9E%84.png" alt="Xmind"></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python(jupter Notebook)基础学习</title>
+    <title>Python(jupter Notebook)学习</title>
     <url>/2022/01/13/jupyter%20Notebook/</url>
     <content><![CDATA[<h2 id="Python-jupter-Notebook-基础学习"><a href="#Python-jupter-Notebook-基础学习" class="headerlink" title="Python(jupter Notebook)基础学习"></a>Python(jupter Notebook)基础学习</h2><h3 id="学了啥"><a href="#学了啥" class="headerlink" title="学了啥"></a>学了啥</h3><p>编程的数据类型,相互转换。</p>
 <p>%为通配符 ‘什么什么%s’%啥</p>
@@ -292,8 +245,33 @@ return datalist
       </tags>
   </entry>
   <entry>
-    <title>Python基础（循环操作+表操作）</title>
-    <url>/2022/02/15/python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%BE%AA%E7%8E%AF%E6%93%8D%E4%BD%9C+%E8%A1%A8%E6%93%8D%E4%BD%9C%EF%BC%89/</url>
+    <title>Kubernetes架构</title>
+    <url>/2022/01/03/kubernetes%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="Kubernetes架构"><a href="#Kubernetes架构" class="headerlink" title="Kubernetes架构"></a>Kubernetes架构</h2><p>Kubernetes的核心特点就是那个Pod概念，<br>我们将Pod比喻成一个瓶子的瓶塞<br>将里面的容器container比喻成一种种成分<br>一个node中可以有多个Pod，Pod之间能实现交互。<br>Pod就像API一样，实现服务入口交接功能。</p>
+<p><img src="/imgg/Kubernetes%E6%9E%B6%E6%9E%84.png" alt="Xmind"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tableau练习demo</title>
+    <url>/2022/01/08/Tableau%E7%BB%83%E4%B9%A0%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h2 id="Tableau安装"><a href="#Tableau安装" class="headerlink" title="Tableau安装"></a>Tableau安装</h2><p>官网下载64位，学生认证注册激活(还好及时注册，不然毕业就没免费试用了^ _ ^)。</p>
+<h2 id="数据连接"><a href="#数据连接" class="headerlink" title="数据连接"></a>数据连接</h2><p>Excel的CSV文件直接用文本文件进行打开和连接。</p>
+<h2 id="数据可视化原理"><a href="#数据可视化原理" class="headerlink" title="数据可视化原理"></a>数据可视化原理</h2><p>维度、度量</p>
+<h2 id="基础图表制作"><a href="#基础图表制作" class="headerlink" title="基础图表制作"></a>基础图表制作</h2><p>百分之90多的数据可视化都可以用折线图、柱状图、散点图、饼图（被誉为四大金刚）</p>
+<h2 id="BI仪表盘搭建"><a href="#BI仪表盘搭建" class="headerlink" title="BI仪表盘搭建"></a>BI仪表盘搭建</h2><p>(直接上图！！)<br><img src="/imgg/demo1.png" alt="Tableau"><br><img src="/imgg/demo2.png" alt="Tableau"></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python（循环操作+表操作）</title>
+    <url>/2022/02/15/python%EF%BC%88%E5%BE%AA%E7%8E%AF%E6%93%8D%E4%BD%9C+%E8%A1%A8%E6%93%8D%E4%BD%9C%EF%BC%89/</url>
     <content><![CDATA[<h2 id="九九乘法表"><a href="#九九乘法表" class="headerlink" title="九九乘法表"></a>九九乘法表</h2><pre><code>嵌套For循环
 </code></pre>
 <p>for i in range(1,10):<br>    for j in range(1,i+1)<br>        print(‘{}x{}={}\t’.format(j,i,i*j),end=’’)<br>    print(‘’)<br>提示：里面的循环要跟着外面的For走</p>
@@ -339,10 +317,21 @@ return datalist
       </tags>
   </entry>
   <entry>
-    <title>聊聊我们的贝叶斯定理</title>
-    <url>/2021/12/18/%E8%81%8A%E8%81%8A%E6%88%91%E4%BB%AC%E7%9A%84%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[<h2 id="可爱的贝叶斯定理"><a href="#可爱的贝叶斯定理" class="headerlink" title="可爱的贝叶斯定理"></a>可爱的贝叶斯定理</h2><p>我们知道伯努利事件，它都是每个独立的事件组成。<br>贝叶斯定理则是在伯努利事件的基础上进行对某些事件的概率确定。</p>
-<p>简单的如图所示，只能用最蠢的方式去做这种题。^ - ^<br><img src="/imgg/%E6%A6%82%E7%8E%87%E9%A2%98%E7%9B%AE.png" alt="题目"><br><img src="/imgg/%E9%A2%98%E7%9B%AE%E7%AD%94%E6%A1%88.jpg" alt="题目答案"></p>
+    <title>基于mysql来复刻Python中Pandas对列表的操作</title>
+    <url>/2022/01/14/%E5%9F%BA%E4%BA%8Emysql%E6%9D%A5%E5%A4%8D%E5%88%BBPython%E4%B8%ADPandas%E5%AF%B9%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><p>首先学习的Pandas的数据预处理<br>本次学习我结合了SQL语言来进行缝合，用Python语言来效仿SQL语言</p>
+<h2 id="一、先加入模块包"><a href="#一、先加入模块包" class="headerlink" title="一、先加入模块包"></a>一、先加入模块包</h2><p>import numpy as np<br>import pandas as pd<br>import pymysql</p>
+<h3 id="1-1设置参数"><a href="#1-1设置参数" class="headerlink" title="1.1设置参数"></a>1.1设置参数</h3><p>pd.set_option(‘display.max_rows’,9999)<br>pd.set_option(‘display.max_columns’,9999)<br>pd.set_option(‘display.float_format’,lambda x: ‘%.3f’%x)</p>
+<h3 id="1-2加入文件"><a href="#1-2加入文件" class="headerlink" title="1.2加入文件"></a>1.2加入文件</h3><p>cpc = pd.read_csv(‘./cpc.csv’,sep=’,’,encoding=’gbk’) 本次加入的文件为csv格式</p>
+<h3 id="简单案例浏览"><a href="#简单案例浏览" class="headerlink" title="简单案例浏览"></a>简单案例浏览</h3><p><img src="/imgg/pandas%E7%AC%AC%E4%B8%80%E9%A2%98.png" alt="Pandas"></p>
+<p><img src="/imgg/pandas%E7%AC%AC%E4%BA%8C%E9%A2%98.png" alt="Pandas"></p>
+<p><img src="/imgg/pandas%E7%AC%AC%E4%B8%89%E9%A2%98.png" alt="Pandas"></p>
+<p><img src="/imgg/pandas%E7%AC%AC%E5%9B%9B%E9%A2%98.png" alt="Pandas"></p>
+<p><img src="/imgg/pandas%E7%AC%AC%E4%BA%94%E9%A2%98.png" alt="Pandas"></p>
+<p><img src="/imgg/pandas%E7%AC%AC%E5%85%AD%E9%A2%98.png" alt="Pandas"></p>
+<p><img src="/imgg/pandas%E7%AC%AC%E4%B8%83%E9%A2%98.png" alt="Pandas"></p>
+<p><img src="/imgg/pandas%E7%AC%AC%E5%85%AB%E9%A2%98.png" alt="Pandas"></p>
+<p><img src="/imgg/pandas%E7%AC%AC%E4%B9%9D%E9%A2%98.png" alt="Pandas"></p>
 <hr>
 ]]></content>
       <tags>
@@ -350,7 +339,7 @@ return datalist
       </tags>
   </entry>
   <entry>
-    <title>Excel报表制作以及简单的分析框架</title>
+    <title>Excel周报制作以及简单的分析框架</title>
     <url>/2022/01/06/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%BC%94%E7%A4%BA/Excel%E6%8A%A5%E5%91%8A%E5%88%B6%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="Excel周报制作"><a href="#Excel周报制作" class="headerlink" title="Excel周报制作"></a>Excel周报制作</h2><p>步骤：<br>1、先设置重要的指标标签（结果指标和过程指标）,并且额外用数据有效性对平台进行可选择性划分，设置业务进度和目标。<br>2、时间轴作为起始字段，把数据中重要的字段提取出来。利用if函数判断平台，再sumifs函数嵌套index和match进行操作（重点）。<br>3、数据可视化（迷你曲线图、数据区域添加规则低于平均值标下划线并加粗、周环比低于0位红色向下箭头、高于0位绿色向上箭头）<br>字体颜色，位置、行的填充色等。<br><img src="/imgg/Excel%E5%91%A8%E6%8A%A5.png" alt="Excel"></p>
 <h2 id="简单的分析框架"><a href="#简单的分析框架" class="headerlink" title="简单的分析框架"></a>简单的分析框架</h2><p><img src="/imgg/Excel%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6.png" alt="Excel"></p>
@@ -361,12 +350,37 @@ return datalist
       </tags>
   </entry>
   <entry>
-    <title>切比雪夫定理的概述</title>
+    <title>切比雪夫定理的概述和贝叶斯定理</title>
     <url>/2021/12/18/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%BC%94%E7%A4%BA/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E5%AE%9A%E7%90%86/</url>
     <content><![CDATA[<hr>
 <h2 id="切比雪夫定理"><a href="#切比雪夫定理" class="headerlink" title="切比雪夫定理"></a>切比雪夫定理</h2><p>有75%的数据在3个标准差的范围内;<br>有89%的数据在5个标准差的范围内;<br>有98%的数据在7个标准差的范围内;</p>
 <h2 id="切比雪夫定理升级版（箱线图）和（正态分布图）"><a href="#切比雪夫定理升级版（箱线图）和（正态分布图）" class="headerlink" title="切比雪夫定理升级版（箱线图）和（正态分布图）"></a>切比雪夫定理升级版（箱线图）和（正态分布图）</h2><p>正态分布中，有68%的数据在1个标准差的范围内;<br>正态分布中，有95%的数据在2个标准差的范围内;<br>正态分布中，有99.8%的数据在3个标准差的范围内;</p>
+<hr>
+<h2 id="贝叶斯定理"><a href="#贝叶斯定理" class="headerlink" title="贝叶斯定理"></a>贝叶斯定理</h2><p>我们知道伯努利事件，它都是每个独立的事件组成。<br>贝叶斯定理则是在伯努利事件的基础上进行对某些事件的概率确定。</p>
+<p>简单的如图所示，只能用最蠢的方式去做这种题。^ - ^<br><img src="/imgg/%E6%A6%82%E7%8E%87%E9%A2%98%E7%9B%AE.png" alt="题目"><br><img src="/imgg/%E9%A2%98%E7%9B%AE%E7%AD%94%E6%A1%88.jpg" alt="题目答案"></p>
+<hr>
 <p><img src="/imgg/deng.jpg" alt="星星点灯"><br>–来自李鸿的蜡烛灯</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何用41万弹幕体现来自科技区稚晖君的魅力|情感分析&amp;LDA主题&amp;可视化</title>
+    <url>/2022/03/08/python%E7%A8%9A%E6%99%96%E5%90%9B%E5%BC%B9%E5%B9%95%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<h2 id="灵感"><a href="#灵感" class="headerlink" title="灵感"></a>灵感</h2><p>在早期的2021-10-7号时，稚晖君在网上发布了一条视频，是关于机械臂的视频，直接冲上热门，<br>所以在今天回顾一下机械臂的魅力。</p>
+<h2 id="第一、想获取数据，基于python爬虫-硬爬"><a href="#第一、想获取数据，基于python爬虫-硬爬" class="headerlink" title="第一、想获取数据，基于python爬虫 硬爬"></a>第一、想获取数据，基于python爬虫 硬爬</h2><p>这里我翻了无数篇blog，找了无数个法子来进行参考和调改。<br>找到很多方法只能爬取几千条的，几百条的。都没法达到我心中的样本统计标准，所以一直寻找最优解。<br>因为之前的爬虫已经失效了，B站它更改了API，所以，cookies必须要有，因为需要账号登录嘛。<br>最后的最后，方法总比困难多，某平台上找到了一个能爬取所有弹幕的方法。<br>这里我直接显示爬取的结果，至于代码不方便透露。转载和标明出处都可能侵权。（狗头保命）<br>这是在DataGrip软件上的图片，因为我将爬取出来的数据下载到了txt文件中，然后导入到DataGrip<br><img src="/imgg/danmu1.png" alt="danmu"><br>以为在B站显示的只有2万条弹幕，真只有2万，最终发现上当了。其实有41万条弹幕。<br><img src="/imgg/danmu2.png" alt="danmu"><br>爬取到的弹幕也是正确无误的，都是对稚晖君大佬作品的认同和赞叹。</p>
+<hr>
+<h2 id="第二、上Notebook来整理弹幕内容列表"><a href="#第二、上Notebook来整理弹幕内容列表" class="headerlink" title="第二、上Notebook来整理弹幕内容列表"></a>第二、上Notebook来整理弹幕内容列表</h2><p>通过库pymysql 来进行连接我的云端数据库，还有加入pandas库来对弹幕内容进行整理。<br><img src="/imgg/danmu3.png" alt="danmu"><br>使用info查看数据是否存在缺失值。虽然一眼就能看出就两列不复杂，由于一些统计建议，我们还是<br>先从大局上摸一摸这份数据的底。info和describe是在探索任何数据集之前必须要用到的。这里describe我加了include，让弹幕的统计分析也显示出来，如果不加上的话，只会显示数值型（sentiment）的统计结果。<br><img src="/imgg/danmu4.png" alt="danmu"><br>占领榜首的词语有点尴尬，奈何没文化，一句卧槽走天下。</p>
+<hr>
+<h2 id="第三、SnowNLP情感分析"><a href="#第三、SnowNLP情感分析" class="headerlink" title="第三、SnowNLP情感分析"></a>第三、SnowNLP情感分析</h2><p>这个是重头戏，因为SnowNLP情感分析能通过弹幕的语句来进行逐字分析，是否为积极还是消极两大方面，目前常见的情感极性分析方法主要是两种：基于情感词典的方法和基于机器学习的方法。主要运用Python的第三方库SnowNLP对弹幕内容进行情感分析，使用方法很简单，计算出的情感score表示语义积极的概率，越接近0情感表现越消极，越接近1情感表现越积极。<br>这里我参考了一些文献，会在最后附录标明出处。<br>首先，导入本次分析需要用到的库(报错的需要安装，安装这里我推荐国内西三方库的连接:pip install 包名 -i <a href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a> –trusted-host pypi.douban.com)<br>我所有的python第三方库都是在cmd 中直接下载所对应的包名即可，从此至今都没有报错过。<br><img src="/imgg/danmu5.png" alt="danmu"><br>接下来对弹幕内容中的每个值都进行情感训练，用lambda进行操作<br><img src="/imgg/danmu6.png" alt="danmu"><br>这里我们能清楚的看到，话都是一些赞叹词，但是情感分析出的分数参差不齐，这可能是因为在SnowNLP中对于敬词并没有很好的划分，只从喜怒哀乐进行详细划分。那么源码已经很难修改，所以在这里我们对于敬词，还有一些没文化的词:”卧槽”,”牛逼”等算是中立分数，都大概在0.5分的范围。所以比较好区分。<br>接下来我们用seaborn（可视化图库，和matplotlib类似）来看一下整体的情感倾向。<br><img src="/imgg/danmu7.png" alt="danmu"><br>这是我直接Markdown来下 可能会与大家共同的想法和理解。这个图出现在电视剧，或者电商可能相相似度会比较高，中间部分一般都是保持中立和不参与评论的人。也是占人数较多的一部分。<br><img src="/imgg/danmu8.png" alt="danmu"></p>
+<hr>
+<h2 id="第四、基于gensim的LDA主题模型"><a href="#第四、基于gensim的LDA主题模型" class="headerlink" title="第四、基于gensim的LDA主题模型"></a>第四、基于gensim的LDA主题模型</h2><p>分析完弹幕情感倾向，我们更进一步，用gansim来对这份弹幕数据做一个主题分析。里面的设计的知识点和原理在这里不太深入提及，如果感兴趣，欢迎加我QQ929134860一同讨论。<br>大致理解是：将所有发言的字段进行分词处理，形成单独的元素，来进行统计。<br>万物不离其宗，有很多发言只是换了一套词而已，想表达的意思一样。所以对此进行分类。<br>本次数据集我分为两种，一种是吃瓜群众，分数在0.4~0.6之间的，另一种是非吃瓜群众，对发言有一定的自己了解的。<br><img src="/imgg/danmu9.png" alt="danmu"><br>看看吃瓜群众的占比。<br><img src="/imgg/danmu10.png" alt="danmu"><br>现在，我们对弹幕内容进行分词处理，因为，我们平时看的新闻标题，B站标题，各种网站都存在一个分类，在本blog中也有相关的分类，都不会是以一个句子的形式呈现。<br>因此，这里使用jieba.Icut()对弹幕内容进行分词操作。<br><img src="/imgg/danmu11.png" alt="danmu"><br>导入下载好的停用词库（需要加QQ我直接发给你）<br>并将停用词加载到一个列表当中。<br><img src="/imgg/danmu12.png" alt="danmu"><br>使用lambda ，将一些不重要的标点符号和语气词过滤掉，方便制作词云图。<br>这里我们举非吃瓜群众弹幕集来进行操作。<br><img src="/imgg/danmu13.png" alt="danmu"><br>然后，使用for循环，将分好的每一个词放到一个列表当中。<br><img src="/imgg/danmu14.png" alt="danmu"><br>紧接着，我们开始构建情感词典了，这里用到的是gensim里面的copora.Dictionary，得出来的pos_dict结果是一个惰性对象，因此需要[*pos_dict]将其展开才能看到结果<br><img src="/imgg/danmu15.png" alt="danmu"><br>得到情感词典后，构建训练用的语料库<br><img src="/imgg/danmu16.png" alt="danmu"><br>最后，使用LDA（文本主题） 模型进行训练（机器学习）<br><img src="/imgg/danmu17.png" alt="danmu"><br>print，LDA主题模型，非常good！<br><img src="/imgg/danmu18.png" alt="danmu"></p>
+<hr>
+<h2 id="第五、词云图绘制"><a href="#第五、词云图绘制" class="headerlink" title="第五、词云图绘制"></a>第五、词云图绘制</h2><p>情感分析和主题分析就结束了，开始我们的词云图。<br>词云图就是词，句子形式不可能在词云图里出现把。<br>首先我们进行一个jieba分词操作<br><img src="/imgg/danmu19.png" alt="danmu"><br>导入相关的库，用停用词cn_stopwords.txt文本过滤一下<br><img src="/imgg/danmu20.png" alt="danmu"><br>使用pdSeries 将过滤好的词转化成元组，然后valuecounts，得出弹幕词频，看看哪些词出现的最多，由此作为依赖绘制词云图，一个普普通通的词云就被我们绘制出来了。<br><img src="/imgg/danmu21.png" alt="danmu"><br>感觉有点丑，而且没什么特别之处，那么我为了美化词云图，用到一个叫stylecloud的库<br>首先，将文本转化为CSV格式，导入。<br><img src="/imgg/danmu22.png" alt="danmu"><br>导入stylecloud 和 from IPython.display import Image 这两个库，输入相关代码<br><img src="/imgg/danmu23.png" alt="danmu"><br>既然是机械臂的视频，就换成AI 机械感的图标把，这个在网址（<a href="https://fontawesome.com/icons/user-graduate?s=solid%EF%BC%89%E6%89%BE%EF%BC%8C%E6%98%AF%E5%90%A6%E6%AF%94%E4%B8%8A%E9%9D%A2%E9%82%A3%E4%B8%AA%E9%AB%98%E7%BA%A7%E4%B8%80%E7%82%B9%5E">https://fontawesome.com/icons/user-graduate?s=solid）找，是否比上面那个高级一点^</a> - ^<br><img src="/imgg/danmu24.png" alt="danmu"><br>这个配色和形状用在这个就非常应景了，stylecloud支持不同的形状和很多专业设计师级别的配色方案，大家感兴趣的话，自行百度一下。</p>
+<hr>
+<p>附录：<br>参考文献：<br>1、Python实现《沉默的真相》3万+弹幕情感分析<br>2、情感分析及可视化方法在网络视频弹幕数据分析中的应用<br>3、公众号Alex树屋《何同学弹幕分析》</p>
 <hr>
 ]]></content>
       <tags>
